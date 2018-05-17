@@ -1,0 +1,13 @@
+<div class="top-right pull-right col-md-6 col-sm-12 col-xs-12">
+    <ul class="top-nav">
+                            <li><a href="#">功德會申請入會</a></li>
+                        </ul>
+                        <ul class="english-nav">
+                        	<li class="active tc_li" ><a class="tc" href='javascript:(function(){var s=document.getElementById("tongwenlet_tw");if(s!=null){document.body.removeChild(s);}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="https://rawgit.com/skofkyo/userChromeJS/master/UserScriptLoader/bookmarklet_tw.js";s.id="tongwenlet_tw";document.body.appendChild(s);})();'>繁體</a></li>
+                            <li class="sc_li"><a class="sc" href='javascript:(function(){var s=document.getElementById("tongwenlet_cn");if(s!=null){document.body.removeChild(s);}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="https://rawgit.com/skofkyo/userChromeJS/master/UserScriptLoader/bookmarklet_cn.js";s.id="tongwenlet_cn";document.body.appendChild(s);})();'>簡體</a></li>
+                        </ul>
+                        <ul class="social-nav">
+                        	<li><a href="#"><span class="fa fa-facebook-square"></span></a></li>
+                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                        </ul>
+                    </div>

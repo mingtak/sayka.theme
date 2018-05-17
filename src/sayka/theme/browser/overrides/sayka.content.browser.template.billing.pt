@@ -54,11 +54,16 @@ input[type="submit"]:hover{
     <div style="font-size: 18px;font-weight: bold;">取或方式:</div>
     <div>
         <label>
-            <input type="radio" name="send_type" value="CVS" required/>超商取貨
+            <input type="radio" name="send_type" value="CVS" id='csv' required/>超商取貨
         </label>
         <label> 
-            <input type="radio" name="send_type" value="Home" required/>宅配
+            <input type="radio" name="send_type" value="Home" id='home' required/>宅配
         </label>
+        <div style='position:absolute;right:0;top:0;border:1px solid black;display:none' id='csv_notic'>
+	    <h3 style='text-align:center;'>*選取<span style='color:#B83B5E'>超商付款</span>請再結帳畫面
+		 點選<span style='color:#B83B5E'>返回商店</span>按鈕</h3>
+            <img src="/++theme++theme/images/billing_csv.png" />
+	</div>
     </div>    
     <!-- 訂購人 -->
     <div style="font-size: 18px;font-weight: bold;">訂購人</div>
@@ -87,18 +92,18 @@ input[type="submit"]:hover{
         </div>
     </div>
     <hr/>
-    <div style="font-size: 18px;font-weight: bold;">收件人</div>
-    <div>
+    <div style="font-size: 18px;font-weight: bold;display: inline">收件人</div>
+    <!--<div>
         <select id="receiver">
             <option value="">選擇通訊錄</option>
-        </select>
+        </select>-->
         <label>
             <input type="checkbox" class="same_with_buyer" data-same="receiver" />同訂購人資料
         </label>
-        <label>
+        <!--<label>
             <input type="checkbox" name="add_receiver"/>加入或更新常用通訊錄
         </label>
-    </div>
+    </div>-->
     <div style='margin-left:10px'>
         <div>姓名<input type="text" name="receiver_name" id="receiver_name" required/></div>
         <div>E-mail <input type="text" name="receiver_email" id="receiver_email" required/></div>
@@ -125,15 +130,16 @@ input[type="submit"]:hover{
         <label>
             <input type="radio" name="invoice_type" value="invoice_two"/>二聯式發票
         </label>
+      <!--
         <label>
             <input type="checkbox" name="add_invoice"/>加入或更新常用通訊錄
-        </label>
+        </label>-->
     </div>
     <div style='margin-left:10px'>
         <div>
-            <select id="invoice">
+           <!-- <select id="invoice">
                 <option value="">選擇通訊錄</option>    
-            </select>
+            </select>-->
         </div>
         <div>發票統編<input type="text" name="invoice_code" id="invoice_code"/></div>
         <div>發票抬頭<input type="text" name="invoice_name" id="invoice_name"/></div>
@@ -165,6 +171,17 @@ input[type="submit"]:hover{
 
 <metal:js fill-slot="js-bottom-slot">
     <script src="${portal_url}/++plone++sayka.content/billing.js"></script>
+    <script>
+	$(function(){
+	    $('input:radio').click(function(){
+		if($('#csv').prop('checked')){
+                    $('#csv_notic').show()
+                }else{
+		    $('#csv_notic').hide()
+		}
+	    })
+	})
+    </script>
 </metal:js>
 
 </body>
