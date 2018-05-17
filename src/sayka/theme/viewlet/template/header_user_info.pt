@@ -1,0 +1,26 @@
+<?python
+from plone import api
+portal = api.portal.get()
+abs_url = portal.absolute_url()
+?>
+<div class="top-right pull-right col-md-6 col-sm-12 col-xs-12" id='header_user_info' style='display:none'>
+    <ul class="top-nav">
+        <tal:cond condition="view/anonymouse">
+            <li><a href="${abs_url}/login">登入</a></li>
+            <li><a href="${abs_url}/@@register">功德會申請入會</a></li>
+        </tal:cond>
+        <tal:cond condition="not: view/anonymouse">
+            <li style='font-size:15px;color:white'>Hi~ ${view/user_id} 
+		<a href="${abs_url}/folder_contents" tal:condition="view/isManager" style='color:aqua'>(後台管理)</a>
+	    </li>
+        </tal:cond>
+    </ul>
+    <ul class="english-nav">
+	<li class="active tc_li" ><a class="tc" href='javascript:(function(){var s=document.getElementById("tongwenlet_tw");if(s!=null){document.body.removeChild(s);}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="https://rawgit.com/skofkyo/userChromeJS/master/UserScriptLoader/bookmarklet_tw.js";s.id="tongwenlet_tw";document.body.appendChild(s);})();'>繁體</a></li>
+	<li class="sc_li"><a class="sc" href='javascript:(function(){var s=document.getElementById("tongwenlet_cn");if(s!=null){document.body.removeChild(s);}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="https://rawgit.com/skofkyo/userChromeJS/master/UserScriptLoader/bookmarklet_cn.js";s.id="tongwenlet_cn";document.body.appendChild(s);})();'>簡體</a></li>
+    </ul>
+    <ul class="social-nav">
+	<li><a href="https://www.facebook.com/%E5%A6%99%E5%85%83%E6%B3%95%E5%B8%AB-327487724055238/"
+	        target="_blank"><span class="fa fa-facebook-square"></span></a></li>
+    </ul>
+</div>

@@ -150,16 +150,12 @@ abs_url = api.portal.get().absolute_url()
         </div>        
     </div>
 </div>
-<metal:js fill-slot="js-bottom-slot">
-<script
-src="https://code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-crossorigin="anonymous"></script>
-    <script src="${portal_url}/++theme++theme/js/shopping_listing.js"></script>
-</metal:js>
 
 </metal:content-core>
 </metal:content-core>
+<metal:js fill-slot="js-bottom-slot">
+    <script src="${portal_url}/++theme++theme/js/shopping_listing.js"></script>
+</metal:js>
 
 </body>
 </html>

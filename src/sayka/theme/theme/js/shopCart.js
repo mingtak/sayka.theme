@@ -112,7 +112,7 @@ var itemCart = new Vue({
 
                     itemCart.product_list.splice(product_index, 1)
                     notify({
-			type: 'warning',
+			type: 'success',
 			title: '刪除商品成功',
 			delay: 3000,
 			position: {

@@ -52,17 +52,34 @@ abs_url = portal.absolute_url()
         </div>
     </tal:condition>
 </tal:rep>
+</metal:content-core>
+</metal:content-core>
+
 <metal:js fill-slot="js-bottom-slot">
-<script
-src="https://code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-crossorigin="anonymous"></script>
     <script src="${portal_url}/++theme++theme/js/shopping_listing.js"></script>
+    <script>
+	$(function(){
+	    $('.go_confirm_cart').click(function(){
+	        shopCart = JSON.parse($.cookie('shopCart'))
+		if(shopCart.length != 0){
+		    return true
+		}else{
+		    notify({
+			type: 'warning',
+		        title: '購物車內尚未有商品',
+			delay: 3000,
+			autoHide: true,
+			position: {
+			    x: 'right',
+			    y: 'bottom'
+			}
+		    })
+                    return false
+		}
+	    })
+	})
+    </script>
 </metal:js>
-</metal:content-core>
-</metal:content-core>
-
-
 
 </body>
 </html>

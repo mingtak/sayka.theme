@@ -67,3 +67,21 @@ class NewsEvent(base.ViewletBase):
 
 class Gallery(base.ViewletBase):
     """"""
+
+
+
+
+class HeaderUserInfo(base.ViewletBase):
+    def update(self):
+        if(not api.user.is_anonymous()):
+	    self.anonymouse = False
+            user = api.user.get_current()
+ 	    self.user_id = user.id
+            if('Manager' in user.getRoles()):
+	        self.isManager = True
+	    else:
+		self.isManager = False
+        else:
+	    self.anonymouse = True
+        
+

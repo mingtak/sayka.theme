@@ -163,7 +163,9 @@ input[type="submit"]:hover{
 </metal:content-core>
 </metal:content-core>
 
-
+<metal:js fill-slot="js-bottom-slot">
+    <script src="${portal_url}/++plone++sayka.content/billing.js"></script>
+</metal:js>
 
 </body>
 </html>

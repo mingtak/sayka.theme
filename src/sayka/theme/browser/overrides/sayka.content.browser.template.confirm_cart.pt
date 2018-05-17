@@ -63,7 +63,10 @@ input[type='number']{
     <tal:repeat repeat="item view/shopCart">
         <tal:findContent define="obj python:api.content.find(id=item[0], context=portal)[0].getObject()">
             <tr>
-                <td><img src="${obj/absolute_url}/@@images/image_1/mini" alt=""/> </td>
+                <td><a href="${obj/absolute_url}">
+                        <img src="${obj/absolute_url}/@@images/image_1/mini" alt=""/>
+                    </a> 
+                </td>
                 <td><h4>${obj/title}</h4></td>
                 <td><input type="number" value="${python:item[1]}" 
                         class="number_update" data-item_id="${obj/id}" min="1"/> </td>
@@ -80,6 +83,9 @@ input[type='number']{
 
 </metal:content-core>
 </metal:content-core>
+<metal:js fill-slot="js-bottom-slot">
+    <script src="${portal_url}/++theme++theme/js/shopping_listing.js"></script>
+</metal:js>
 
 </body>
 </html>

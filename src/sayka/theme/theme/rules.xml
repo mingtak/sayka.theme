@@ -25,7 +25,7 @@
     <drop css:content="head link[rel='apple-touch-icon']" />
     <drop css:content="head link[rel='shortcut icon']" />
     
-
+    <after css:theme-children="body" css:content-children="#js-bottom-slot"/>
   </rules>
 
   <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
@@ -71,7 +71,8 @@
             <div class="adds-block" style="background-image:url(/sayka/++theme++theme/images/resource/add-image-2.jpg);">
                 <div class="inner-box">
                     <div class="text">妙元法師 <span> facebook粉絲團</span></div>
-                      <a href="#" class="theme-btn btn-style-two">請幫忙按讚唷！</a>
+                      <a href="https://www.facebook.com/%E5%A6%99%E5%85%83%E6%B3%95%E5%B8%AB-327487724055238/" 
+                         target="_blank" class="theme-btn btn-style-two">請幫忙按讚唷！</a>
                   </div>
               </div>
           </div>
@@ -112,7 +113,7 @@
            css:theme='.dropdown-menu.pull-right.cart-panel' />
   <replace css:content='#portal-anontools ul li' 
            css:theme='.top-right.pull-right .top-nav li' />
-
+  <replace css:content='#header_user_info' css:theme='.top-right.pull-right' />
   <replace css:content='.portletContent.form-container' css:theme='.form-container' />
 </rules>
 </rules>

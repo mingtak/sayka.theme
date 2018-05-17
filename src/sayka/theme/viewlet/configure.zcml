@@ -44,4 +44,13 @@
         template="template/gallery.pt"
         permission="zope2.View"
     />
+    <browser:viewlet
+        name="header_user_info"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".viewlet.HeaderUserInfo"
+        template="template/header_user_info.pt"
+        permission="zope2.View"
+    />
+
 </configure>
