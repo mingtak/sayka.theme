@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:css="http://namespaces.plone.org/diazo/css"
+       xmlns:xhtml="http://www.w3.org/1999/xhtml"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+       xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<xi:include href="backend.xml" />
+
+<!-- Only theme front end pages -->
+<rules css:if-content="body.frontend#visual-portal-wrapper">
+
+  <theme href="index.html" />
+  <notheme css:if-not-content="#visual-portal-wrapper" />
+
+  <rules css:if-content="#portal-top">
+    <!-- Attributes -->
+    <copy attributes="*" css:theme="html" css:content="html" />
+    <!-- Title -->
+    <replace css:theme="title" css:content="title" />
+    <!-- Pull in Plone Meta -->
+    <after css:theme-children="head" css:content="head meta" />
+
+    <!-- Don't use Plone icons, use the theme's -->
+    <drop css:content="head link[rel='apple-touch-icon']" />
+    <drop css:content="head link[rel='shortcut icon']" />
+    
+
+  </rules>
+
+  <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
+  <copy attributes="*" css:content="body" css:theme="body" />
+
+  <!-- logo -->
+  <replace css:theme=".logo a" css:content="a#portal-logo" />
+  <drop css:content="a#portal-logo img" />
+
+  <!-- main menu / rwd menu -->
+  <replace css:theme-children="#bs-example-navbar-collapse-1 ul" css:content-children="#portal-globalnav" />
+  <replace css:content="#portal-globalnav" css:theme-children='#nav2' />
+
+  <!-- Central column -->
+  <replace css:theme="#content-container" method="raw">
+    <xsl:variable name="central">
+      <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">content-side col-lg-8 col-md-8 col-sm-12 col-xs-12</xsl:if>
+      <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">content-side col-lg-12 col-md-12 col-sm-12 col-xs-12</xsl:if>
+      <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">content-side col-lg-8 col-md-8 col-sm-12 col-xs-12</xsl:if>
+      <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">content-side col-lg-12 col-md-12 col-sm-12 col-xs-12</xsl:if>
+    </xsl:variable>
+
+    <div class="{$central}">
+      <div class="category-tabs-box">
+          <xsl:apply-templates css:select="#content-core" />
+      </div>
+    </div>
+  </replace>
+
+  <!-- Left column -->
+  <rules css:if-content="#portal-column-one">
+    <replace css:theme="#column1-container">
+
+      <div class="sidebar-side pull-right col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <aside class="sidebar default-sidebar left-sidebar">
+          <div class="sidebar-widget categories-widget">
+              <div class="sidebar-title">
+                  <h2>妙元大和尚</h2>
+              </div>
+              <xsl:copy-of css:select="#portal-column-one > *" />
+          </div>
+          <div class="sidebar-widget sidebar-adds-widget">
+            <div class="adds-block" style="background-image:url(/sayka/++theme++theme/images/resource/add-image-2.jpg);">
+                <div class="inner-box">
+                    <div class="text">妙元法師 <span> facebook粉絲團</span></div>
+                      <a href="#" class="theme-btn btn-style-two">請幫忙按讚唷！</a>
+                  </div>
+              </div>
+          </div>
+        </aside>
+      </div>
+    </replace>
+  </rules>
+
+  <drop css:theme="#column1-container" css:if-not-content="#portal-column-one" />
+
+  <!-- Right column -->
+  <!--<rules css:if-content="#portal-column-two">
+    <replace css:theme="#column2-container">
+        <div id="sidebar-right" class="sidebar-side col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="sidebar-widget categories-widget">
+                <xsl:copy-of css:select="#portal-column-two > *" />
+            </div>
+        </div>
+    </replace>
+  </rules>
+  <drop css:theme="#column2-container" css:if-not-content="#portal-column-two" />
+  -->
+  <!-- drop -->
+  <drop css:content="#edit-zone" />
+  <drop css:theme=".preloader" />
+
+  <drop css:theme="section.page-title" css:if-content=".template-cover_view" />
+  <drop css:theme='.galley-section.grey-bg' css:if-not-content=".template-cover_view"/>
+  <drop css:theme='.blog-carousel-section.grey-bg' />
+  <replace css:content='#viewlet-above-content-body' css:theme='.main-slider-five' />
+  <drop css:content='.documentFirstHeading' css:if-content=".template-cover_view"/>
+  <replace css:content-children='.documentFirstHeading' 
+           css:theme-children='.page-title .clearfix .pull-left h2' />
+  <replace css:content='#path_bar' css:theme-children='.page-title .pull-right' />
+  <replace css:content='#global_statusmessage .top-left' 
+           css:theme='.main-header .header-top .auto-container .top-left' />
+  <replace css:content='#global_statusmessage .pull-right' 
+           css:theme='.dropdown-menu.pull-right.cart-panel' />
+  <replace css:content='#portal-anontools ul li' 
+           css:theme='.top-right.pull-right .top-nav li' />
+
+  <replace css:content='.portletContent.form-container' css:theme='.form-container' />
+</rules>
+</rules>
+

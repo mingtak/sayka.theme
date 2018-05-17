@@ -1,0 +1,207 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    xmlns:v-on="http://vuejs.org"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="sayka.content">
+<body>
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+<?python
+from plone import api
+abs_url = api.portal.get().absolute_url()
+?>
+<div class="prod-tabs tabs-box">
+    <!--Tab Btns-->
+    <div class="tab-btns tab-buttons clearfix">
+        <div class="pull-left">
+            <div class="category">最新消息</div>
+        </div>
+        <div class="pull-right">
+            <div>
+                <div data-tab="#prod-alls" class="tab-btn">年度舉辦活動</div>
+                <div data-tab="#prod-design" class="tab-btn">最新活動</div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Tabs Container-->
+    <div class="tabs-content">
+        
+        <!--Tab / Active Tab-->
+        <div class="tab active-tab" id="prod-alls">
+            <div class="content">
+                <div class="row clearfix">
+                    <div class="column col-md-6 col-sm-6 col-xs-12">
+                        <div class="single-item-carousel owl-carousel owl-theme">
+                        
+                            <!--News Block Two-->
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <a href="#"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-5.jpg" alt="" /></a>
+                                        <div class="category"><a href="#">年度舉辦活動</a></div>
+                                    </div>
+                                    <div class="lower-box">
+                                        <h3><a href="#">年度舉辦活動標題-01</a></h3>
+                                        <ul class="post-meta">
+                                            <li><span class="icon fa fa-clock-o"></span>2018.5.1</li>
+                                        </ul>
+                                        <div class="text">年度舉辦活動內文年度舉辦活動內文年度舉辦活動內文年度舉辦活動內文年度舉辦活動內文…</div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!--News Block Two-->
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <a href="#"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-5.jpg" alt="" /></a>
+                                        <div class="category"><a href="#">Travel</a></div>
+                                    </div>
+                                    <div class="lower-box">
+                                        <h3><a href="#">年度舉辦活動標題-01</a></h3>
+                                        <ul class="post-meta">
+                                            <li><span class="icon fa fa-clock-o"></span>2018.5.1</li>
+                                        </ul>
+                                        <div class="text">年度舉辦活動內文年度舉辦活動內文年度舉辦活動內文年度舉辦活動內文年度舉辦活動內文…</div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            </div>
+                    </div>
+                    <div class="column col-md-6 col-sm-6 col-xs-12">
+                        
+                        <!--Widget Post-->
+                        <article class="widget-post">
+                            <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/post-thumb-1.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                            <div class="text"><a href="blog-single.html">小年度舉辦活動標題-01</a></div>
+                            <div class="post-info">2018.5.1</div>
+                        </article>
+                        
+                        <!--Widget Post-->
+                        <article class="widget-post">
+                            <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/post-thumb-2.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                            <div class="text"><a href="blog-single.html">小年度舉辦活動標題-02</a></div>
+                            <div class="post-info">2018.5.1</div>
+                        </article>
+                        
+                        <!--Widget Post-->
+                        <article class="widget-post">
+                            <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/post-thumb-3.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                            <div class="text"><a href="blog-single.html">小年度舉辦活動標題-03</a></div>
+                            <div class="post-info">April 03, 2016</div>
+                        </article>
+                        
+                        <!--Widget Post-->
+                        <article class="widget-post">
+                            <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/post-thumb-4.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                            <div class="text"><a href="blog-single.html">小年度舉辦活動標題-04</a></div>
+                            <div class="post-info">2018.5.1</div>
+                        </article>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!--Tab-->
+        <div class="tab" id="prod-design">
+            <div class="content">
+                <div class="row clearfix">
+                    <div class="column col-md-6 col-sm-6 col-xs-12">
+                        <div class="single-item-carousel owl-carousel owl-theme">
+                        
+                            <!--News Block Two-->
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <a href="#"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-5.jpg" alt="" /></a>
+                                        <div class="category"><a href="#">最新活動</a></div>
+                                    </div>
+                                    <div class="lower-box">
+                                        <h3><a href="#">最新活動標題-01</a></h3>
+                                        <ul class="post-meta">
+                                            <li><span class="icon fa fa-clock-o"></span>2018.5.1</li>
+                                        </ul>
+                                        <div class="text">最新活動內文字最新活動內文字最新活動內文字最新活動內文字最新活動內文字最新活動內文字</div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!--News Block Two-->
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <a href="#"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-5.jpg" alt="" /></a>
+                                        <div class="category"><a href="#">Travel</a></div>
+                                    </div>
+                                    <div class="lower-box">
+                                        <h3><a href="#">最新活動標題-02</a></h3>
+                                        <ul class="post-meta">
+                                            <li><span class="icon fa fa-clock-o"></span>2018.5.1</li>
+                                        </ul>
+                                        <div class="text">最新活動內文字最新活動內文字最新活動內文字最新活動內文字最新活動內文字最新活動內文字</div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            </div>
+                    </div>
+                    <div class="column col-md-6 col-sm-6 col-xs-12">
+                        
+                        <!--Widget Post-->
+                        <article class="widget-post">
+                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-1.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                            <div class="text"><a href="blog-single.html">s最新活動標題-01</a></div>
+                            <div class="post-info">2018.5.1</div>
+                        </article>
+                        
+                        <!--Widget Post-->
+                        <article class="widget-post">
+                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                            <div class="text"><a href="blog-single.html">s最新活動標題-02</a></div>
+                            <div class="post-info">2018.5.1</div>
+                        </article>
+                        
+                        <!--Widget Post-->
+                        <article class="widget-post">
+                            <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/post-thumb-2.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                            <div class="text"><a href="blog-single.html">s最新活動標題-03</a></div>
+                            <div class="post-info">2018.5.1</div>
+                        </article>
+                        
+                        <!--Widget Post-->
+                        <article class="widget-post">
+                            <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/post-thumb-4.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                            <div class="text"><a href="blog-single.html">s最新活動標題-04</a></div>
+                            <div class="post-info">2018.5.1</div>
+                        </article>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!--Tab-->
+        
+    </div>
+</div>
+
+
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

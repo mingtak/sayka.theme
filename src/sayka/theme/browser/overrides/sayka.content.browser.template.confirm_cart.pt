@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    xmlns:v-on="http://vuejs.org"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="sayka.content">
+<body>
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+<?python
+from plone import api
+portal = api.portal.get()
+abs_url = portal.absolute_url()
+?>
+<style>
+th{
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+td{
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.confirm_del{
+    padding: 5px 10px;
+    transition: 0.5s;
+}
+.confirm_del:hover{
+    background: #B83B5E;
+    color: white;
+}
+.edit_profile{
+    padding: 10px 480px;
+    background: #FCE38A;
+    transition: 0.5s;
+    color: rgb(102, 102, 102);
+}
+.edit_profile:hover{
+    background: #F08A5D;
+    color: white;
+}
+input[type='number']{
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    width: 75px;
+    padding-left: 10px;
+}
+</style>
+<table>
+    <tr style="margin-botton:20px">
+        <th style="width:180px">圖片</th>
+        <th style="width:250px">商品名稱</th>
+        <th style="width:200px">數量</th>
+        <th style="width:200px">價格</th>
+        <th style="width:200px"></th>
+    </tr>
+    <tal:repeat repeat="item view/shopCart">
+        <tal:findContent define="obj python:api.content.find(id=item[0], context=portal)[0].getObject()">
+            <tr>
+                <td><img src="${obj/absolute_url}/@@images/image_1/mini" alt=""/> </td>
+                <td><h4>${obj/title}</h4></td>
+                <td><input type="number" value="${python:item[1]}" 
+                        class="number_update" data-item_id="${obj/id}" min="1"/> </td>
+                <td><h4>${obj/sale_price}</h4></td>
+                <td><button data-item_id="${obj/id}" class="confirm_del">刪除</button></td>
+            </tr>
+        </tal:findContent>
+    </tal:repeat>
+</table>
+<div style="margin-top:20px;margin-left:10px">
+    <a href="${abs_url}/billing" class="edit_profile">填寫資料</a>
+</div>
+
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

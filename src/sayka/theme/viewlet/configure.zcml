@@ -1,0 +1,47 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="sayka.theme">
+
+    <browser:viewlet
+        name="cart_icon"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IGlobalStatusMessage"
+        class=".viewlet.CartIcon"
+        template="template/cart_icon.pt"
+        permission="zope2.View"
+    />
+    <browser:viewlet
+        name="news_scroll"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IGlobalStatusMessage"
+        class=".viewlet.NewsScroll"
+        template="template/news_scroll.pt"
+        permission="zope2.View"
+    />
+    <browser:viewlet
+        name="banner"
+        for="sayka.content.interfaces.ICover"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        class=".viewlet.Banner"
+        template="template/banner.pt"
+        permission="zope2.View"
+    />
+    <browser:viewlet
+        name="news_event"
+        for="sayka.content.interfaces.ICover"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        class=".viewlet.NewsEvent"
+        template="template/news_event.pt"
+        permission="zope2.View"
+    />
+    <browser:viewlet 
+        name="gallery"
+        for="sayka.content.interfaces.ICover"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class=".viewlet.Gallery"
+        template="template/gallery.pt"
+        permission="zope2.View"
+    />
+</configure>

@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    xmlns:v-on="http://vuejs.org"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="sayka.content">
+<body>
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+<?python
+from plone import api
+portal = api.portal.get()
+abs_url = portal.absolute_url()
+?>
+<style>
+.go_confirm_cart{
+    padding: 10px 480px;
+    background: #FCE38A;
+    transition: 0.5s;
+    color: rgb(102, 102, 102);
+}
+.go_confirm_cart:hover{
+    background: #F08A5D;
+    color: white;
+}
+</style>
+<div style="margin-bottom: 25px;margin-left: 95px;">
+    <a href="${abs_url}/@@confirm_cart" class="go_confirm_cart" >結帳</a>
+</div>
+<tal:rep repeat="content view/context/contentValues">
+    <tal:condition condition="python: api.content.get_state(obj=content) == 'published'">
+        <div class="shop-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="inner-box">
+                <div class="image-box">
+                    <a href="${content/absolute_url}"><img src="${content/absolute_url}/@@images/cover" alt="" /></a>
+                </div>
+                <div class="lower-box">
+                    <div class="upper-box">
+                        <h4><a href="${content/absolute_url}">${content/title}</a></h4>
+                    </div>
+                    <div class="lower-content">
+                        <div class="price">${content/sale_price}</div>
+                        <a href="" class="cart-btn theme-btn"
+                            data-item_id='${content/id}'>加入購物車</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </tal:condition>
+</tal:rep>
+<metal:js fill-slot="js-bottom-slot">
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+    <script src="${portal_url}/++theme++theme/js/shopping_listing.js"></script>
+</metal:js>
+</metal:content-core>
+</metal:content-core>
+
+
+
+</body>
+</html>

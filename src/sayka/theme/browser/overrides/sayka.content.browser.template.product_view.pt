@@ -1,0 +1,165 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    xmlns:v-on="http://vuejs.org"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="sayka.content">
+<body>
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+<?python
+from plone import api
+portal = api.portal.get()
+abs_url = api.portal.get().absolute_url()
+?>
+
+<div class="shop-page">
+    <div class="auto-container">
+        <!--Basic Details-->
+        <div class="basic-details">
+            <div class="row clearfix">
+            
+                <div class="image-column col-md-6 col-sm-12 col-xs-12">
+                    <div class="carousel-outer">
+                        <ul class="image-carousel owl-carousel owl-theme">
+                            <li><a href="${context/absolute_url}/@@images/image_1" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_1" alt=""></a></li>
+                            <li><a href="${context/absolute_url}/@@images/image_2" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_2" alt=""></a></li>
+                            <li><a href="${context/absolute_url}/@@images/image_3" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_3" alt=""></a></li>
+                            <li><a href="${context/absolute_url}/@@images/image_4" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_4" alt=""></a></li>
+                            <li><a href="${context/absolute_url}/@@images/image_5" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_5" alt=""></a></li>
+                            <li><a href="${context/absolute_url}/@@images/image_6" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_6" alt=""></a></li>
+                            <li><a href="${context/absolute_url}/@@images/image_7" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_7" alt=""></a></li>
+                            <li><a href="${context/absolute_url}/@@images/image_8" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_8" alt=""></a></li>
+                        </ul>
+                        
+                        <ul class="thumbs-carousel owl-carousel owl-theme">
+                            <li><img src="${context/absolute_url}/@@images/image_1" alt=""></li>
+                            <li><img src="${context/absolute_url}/@@images/image_2" alt=""></li>
+                            <li><img src="${context/absolute_url}/@@images/image_3" alt=""></li>
+                            <li><img src="${context/absolute_url}/@@images/image_4" alt=""></li>
+                            <li><img src="${context/absolute_url}/@@images/image_5" alt=""></li>
+                            <li><img src="${context/absolute_url}/@@images/image_6" alt=""></li>
+                            <li><img src="${context/absolute_url}/@@images/image_7" alt=""></li>
+                            <li><img src="${context/absolute_url}/@@images/image_8" alt=""></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                
+                <!--Info Column-->
+                <div class="info-column col-md-6 col-sm-12 col-xs-12">
+                    <div class="inner-column">
+                        <div class="details-header">
+                            <h4>${context/title}</h4>
+                            <div class="item-price">NT${context/sale_price}</div>
+                        </div>
+                        <div class="text">
+                            <p style="word-break:break-word">${context/description}</p>
+                        </div>
+                        <div class="other-options">
+                            <!--Btns Box-->
+                            <div class="btns-box">
+                                <button type="button" class="theme-btn add-to-cart"
+                                      data-item_id="${context/id}" data-item_url="${context/absolute_url}">
+                                 <span class="icon qb-shop3"></span>加入購物車</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!--Basic Details-->
+        
+        <!--Product Info Tabs-->
+        <div class="product-info-tabs">
+            <!--Product Tabs-->
+            <div class="prod-tabs tabs-box">
+            
+                <!--Tab Btns-->
+                <ul class="tab-btns tab-buttons clearfix">
+                    <li data-tab="#prod-details" class="tab-btn active-btn">產品詳細介紹</li>
+                    <li data-tab="#prod-reviews" class="tab-btn">退換貨須知</li>
+                </ul>
+                
+                <!--Tabs Container-->
+                <div class="tabs-content">
+                    
+                    <!--Tab / Active Tab-->
+                    <div class="tab active-tab" id="prod-details">
+                        <div class="content">
+                            <p>${context/detail}</p>
+                        </div>
+                    </div>
+                    
+                    <!--Tab-->
+                    <div class="tab" id="prod-reviews">
+                        <div class="content">
+                            <p>退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知</p>
+                        </div>
+                    </div>
+    
+                    
+                </div>
+            </div>
+        </div>
+        <!--End Product Info Tabs-->
+        
+        <!--Related Items-->
+        <div class="related-items">
+            <div class="sec-title">
+                <h2>相關產品</h2>
+            </div>
+            <div class="four-item-carousel owl-carousel owl-theme">
+                <!--Shop Item-->
+                <tal:repeat repeat="result view/result">
+                <tal:define define="item result/getObject">
+                <tal:condition condition="python: api.content.get_state(obj=item) == 'published'">
+                    <div class="shop-item" >
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <a href="${result/getURL}">
+                                    <img src="${result/getURL}/@@images/cover" alt="" />
+                                </a>
+                            </div>
+                            <?python
+                                from plone import api
+                                abs_url = api.portal.get().absolute_url()
+                            ?>
+                            <div class="lower-box">
+                                <div class="upper-box">
+                                    <h4><a href="${result/getURL}">${item/title}</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="price">${item/sale_price}</div>
+                                    <a  class="cart-btn theme-btn"
+                                        data-item_id="${item/id}"
+                                        data-item_url="${abs_url}">加入購物車</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tal:condition>
+                </tal:define>
+                </tal:repeat>
+            </div>
+        </div>        
+    </div>
+</div>
+<metal:js fill-slot="js-bottom-slot">
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+    <script src="${portal_url}/++theme++theme/js/shopping_listing.js"></script>
+</metal:js>
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

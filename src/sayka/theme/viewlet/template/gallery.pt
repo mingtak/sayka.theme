@@ -1,0 +1,87 @@
+<section class="galley-section grey-bg">
+    <div class="auto-container">
+        <div class="single-item-carousel owl-carousel owl-theme">
+            <div class="slide">
+                <div class="row clearfix">
+                    <div class="column col-md-6 col-sm-6 col-xs-12">
+                        <div class="default-gallery-block">
+                            <div class="inner-box">
+                                <a href="/sayka/++theme++theme/images/gallery/1.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/1.jpg" alt="" /></a>
+                                <div class="text">活動集錦照片標題-01</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column col-md-6 col-sm-6 col-xs-12">
+                        <div class="row clearfix">
+                            <div class="inner-column col-md-12 col-sm-12 col-xs-12">
+                                <div class="default-gallery-block">
+                                    <div class="inner-box">
+                                        <a href="/sayka/++theme++theme/images/gallery/2.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/2.jpg" alt="" /></a>
+                                <div class="text">活動集錦照片標題-02</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner-column col-md-6 col-sm-6 col-xs-12">
+                                <div class="default-gallery-block">
+                                    <div class="inner-box">
+                                        <a href="/sayka/++theme++theme/images/gallery/3.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/3.jpg" alt="" /></a>
+                                <div class="text">活動集錦照片標題-03</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner-column col-md-6 col-sm-6 col-xs-12">
+                                <div class="default-gallery-block">
+                                    <div class="inner-box">
+                                        <a href="/sayka/++theme++theme/images/gallery/4.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/4.jpg" alt="" /></a>
+                                <div class="text">活動集錦照片標題-04</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="row clearfix">
+                    <div class="column col-md-6 col-sm-6 col-xs-12">
+                        <div class="default-gallery-block">
+                            <div class="inner-box">
+                                <a href="/sayka/++theme++theme/images/gallery/1.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/1.jpg" alt="" /></a>
+                                <div class="text">活動集錦照片標題-05</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column col-md-6 col-sm-6 col-xs-12">
+                        <div class="row clearfix">
+                            <div class="inner-column col-md-12 col-sm-12 col-xs-12">
+                                <div class="default-gallery-block">
+                                    <div class="inner-box">
+                                        <a href="/sayka/++theme++theme/images/gallery/2.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/2.jpg" alt="" /></a>
+                                <div class="text">活動集錦照片標題-06</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner-column col-md-6 col-sm-6 col-xs-12">
+                                <div class="default-gallery-block">
+                                    <div class="inner-box">
+                                        <a href="/sayka/++theme++theme/images/gallery/3.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/3.jpg" alt="" /></a>
+                                <div class="text">活動集錦照片標題-06</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner-column col-md-6 col-sm-6 col-xs-12">
+                                <div class="default-gallery-block">
+                                    <div class="inner-box">
+                                        <a href="/sayka/++theme++theme/images/gallery/4.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/4.jpg" alt="" /></a>
+                                <div class="text">活動集錦照片標題-08</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,37 @@
+<tal:sections
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     tal:define="portal_tabs view/portal_tabs"
+     tal:condition="portal_tabs"
+     i18n:domain="plone">
+
+<nav class="plone-navbar" id="portal-globalnav-wrapper">
+  <div class="container">
+    <div class="plone-collapse plone-navbar-collapse" id="portal-globalnav-collapse">
+      <ul class="plone-nav plone-navbar-nav navigation clearfix"
+          id="portal-globalnav"
+          tal:define="selected_tab python:view.selected_portal_tab">
+          <?python
+          from plone import api
+           
+          ?>
+          <li class='dropdown' tal:repeat='item portal_tabs'>
+              <a href="${python:item['url']}">
+                  ${python:item['name']}
+              </a>
+              <ul tal:condition='repeat/item/index'>
+                  <li tal:repeat="sec_item python: api.content.find(path='/sayka/' + item['id'] , 
+                      depth=1, portal_type='Folder')">
+                     <a href="${sec_item/getURL}">   
+                       ${python:sec_item.Title}
+                     </a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</tal:sections>

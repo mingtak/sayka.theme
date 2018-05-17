@@ -1,0 +1,27 @@
+<html xmlns:v-on="http://www.vue.org/v-on"
+    xmlns:v-bind="http://www.vue.org/v-bind"
+    xmlns:v-model="http://www.vue.org/v-model">
+    <?python
+        from plone import api
+        abs_url = api.portal.get().absolute_url()
+    ?>
+    <div class="dropdown-menu pull-right cart-panel" aria-labelledby="dropdownMenu3"
+         id="item-cart">
+        <div is="product-list"
+            v-model="product_list"
+            v-for="(product,index) in product_list"
+            v-bind:title="product.title"
+            v-bind:image="product.image"
+            v-bind:sale_price="product.sale_price"
+            v-bind:absolute_url="product.absolute_url"
+            v-bind:product_id="product.product_id"
+            v-on:remove="remove(index)"
+            >
+        </div>
+
+        <div class="cart-total">總金額: <span>{{total_price}}</span></div>
+        <ul class="btns-boxed">
+            <li><a href="${abs_url}/@@confirm_cart" id='go_confirm_cart'>結帳</a></li>
+        </ul>
+    </div>
+</html>

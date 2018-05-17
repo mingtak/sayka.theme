@@ -1,0 +1,34 @@
+<html xmlns:v-on="http://www.vue.org/v-on"
+    xmlns:v-bind="http://www.vue.org/v-bind"
+    xmlns:v-model="http://www.vue.org/v-model">
+    <?python
+        from plone import api
+        abs_url = api.portal.get().absolute_url()
+    ?>
+    <section class="blog-carousel-section grey-bg">
+        <div class="auto-container">
+            <div class="three-item-carousel owl-carousel owl-theme">
+                <div class="news-block-three" tal:repeat="event view/catch_news">
+                <tal:def define="number repeat/event/number">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="${python:event[2]}/@@images/cover" alt="" />
+                            <div class="overlay-box">
+                                <a href="${abs_url}/event_info/event_news" class="play-btn"><span class="icon qb-play-arrow"></span></a>
+                                <div class="content">
+                                    <div class="tag"><a href="${abs_url}/event_info/event_news">最新活動${number}</a></div>
+                                    <h3><a href="${abs_url}/event_info/event_news">${python: event[0]}</a></h3>
+                                    <ul class="post-meta">
+                                        <li><span class="icon qb-clock"></span>${python: event[1]}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tal:def>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</html>

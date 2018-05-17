@@ -1,0 +1,127 @@
+<html xmlns:v-on="http://www.vue.org/v-on"
+    xmlns:v-bind="http://www.vue.org/v-bind"
+    xmlns:v-model="http://www.vue.org/v-model">
+    <?python
+        from plone import api
+        abs_url = api.portal.get().absolute_url()
+    ?>
+<section class="main-slider-five">
+    <div class="product-details">
+        <div class="basic-details">
+            <div class="image-column">
+                <div class="carousel-outer"
+                    tal:define="item python:view.catch_banner()[0]">
+                  <tal:def define="obj python:item.getObject()">
+                    <ul class="image-carousel owl-carousel owl-theme" >
+                        <li>
+                            <div class="news-block-six">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <div class="image">
+                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="${python: obj.absolute_url()}/@@images/banner1"  alt="" />
+                                            <div class="overlay-box">
+                                                <div class="overlay-inner">
+                                                    <div class="content">
+                                                        <h2>${python: obj.banner1_title}</h2>
+                                                        <div class="post-date margin">${python: obj.description1}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="news-block-six">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <div class="image">
+                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="${python: obj.absolute_url()}/@@images/banner2"  alt="" />
+                                            <div class="overlay-box">
+                                                <div class="overlay-inner">
+                                                    <div class="content">
+                                                        <h2>${python: obj.banner2_title}</h2>
+                                                        <div class="post-date margin">${python: obj.description2}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="news-block-six">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <div class="image">
+                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="${python: obj.absolute_url()}/@@images/banner3"  alt="" />
+                                            <div class="overlay-box">
+                                                <div class="overlay-inner">
+                                                    <div class="content">
+                                                        <h2>${python: obj.banner3_title}</h2>
+                                                        <div class="post-date margin">${python: obj.description3}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="news-block-six">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <div class="image">
+                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="${python: obj.absolute_url()}/@@images/banner4"  alt="" />
+                                            <div class="overlay-box">
+                                                <div class="overlay-inner">
+                                                    <div class="content">
+                                                        <h2>${python: obj.banner4_title}</h2>
+                                                        <div class="post-date margin">${python: obj.description4}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="news-block-six">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <div class="image">
+                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="${python: obj.absolute_url()}/@@images/banner5"  alt="" />
+                                            <div class="overlay-box">
+                                                <div class="overlay-inner">
+                                                    <div class="content">
+                                                        <h2>${python: obj.banner5_title}</h2>
+                                                        <div class="post-date margin">${python: obj.description5}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="thumbs-carousel owl-carousel owl-theme">
+                        <li>${python:obj.banner1_title}</li>
+                        <li>${python:obj.banner2_title}</li>
+                        <li>${python:obj.banner3_title}</li>
+                        <li>${python:obj.banner4_title}</li>
+                        <li>${python:obj.banner5_title}</li>
+                    </ul>
+                  </tal:def>               
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</html>
