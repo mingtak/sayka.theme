@@ -72,4 +72,24 @@ $(function(){
             }
         });
     })
+
+    $('.number_update').change(function(){
+	item_id = $(this).data('item_id')
+	number = $(this).val()
+	data = {
+	    'item_id': item_id,
+	    'number': number,
+	    'action': 'update'
+	}
+	url = location.href.replace('@@confirm_cart', 'cart_update')
+
+	$.ajax({
+	    type: 'post',
+	    url: url,
+	    data: data,
+	    success: function(response){
+		$('#total_price').html(response)
+	    }
+	})
+    })
 })

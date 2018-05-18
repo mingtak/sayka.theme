@@ -4,7 +4,7 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     lang="en"
     metal:use-macro="context/main_template/macros/master"
-    i18n:domain="mingtak.billing">
+    i18n:domain="sayka.content">
 <body>
 
 
@@ -22,6 +22,7 @@ input[type=submit]{
     padding: 5px 12px;
 }
 </style>
+
     <table>
         <tr>
             <th style="width:95px">交易編號</th>
@@ -59,7 +60,6 @@ input[type=submit]{
                 </td>
             </tr>
         </tal:repeat>
-
     </table>
 </metal:content-core>
 </metal:content-core>

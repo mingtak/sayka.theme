@@ -51,10 +51,11 @@ input[type='number']{
     width: 75px;
     padding-left: 10px;
 }
+
 </style>
 <table>
     <tr style="margin-botton:20px">
-        <th style="width:180px">圖片</th>
+        <th style="width:180px">商品圖片</th>
         <th style="width:250px">商品名稱</th>
         <th style="width:200px">數量</th>
         <th style="width:200px">價格</th>
@@ -64,7 +65,7 @@ input[type='number']{
         <tal:findContent define="obj python:api.content.find(id=item[0], context=portal)[0].getObject()">
             <tr>
                 <td><a href="${obj/absolute_url}">
-                        <img src="${obj/absolute_url}/@@images/image_1/mini" alt=""/>
+                        <img src="${obj/absolute_url}/@@images/image_1/mini" style='height:180px'/>
                     </a> 
                 </td>
                 <td><h4>${obj/title}</h4></td>
@@ -75,11 +76,16 @@ input[type='number']{
             </tr>
         </tal:findContent>
     </tal:repeat>
+   
 </table>
-<div style="margin-top:20px;margin-left:10px">
+
+<h2 style='margin:20px 140px 20px 0;display:flex;justify-content:flex-end'>
+              總金額:<span style='color:#e73f43' id='total_price'>${view/total_price}</span>元 
+</h2>
+
+<div style="margin-left:10px">
     <a href="${abs_url}/billing" class="edit_profile">填寫資料</a>
 </div>
-
 
 </metal:content-core>
 </metal:content-core>
