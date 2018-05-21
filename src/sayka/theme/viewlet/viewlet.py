@@ -58,10 +58,11 @@ class NewsEvent(base.ViewletBase):
         result_event = api.content.find(context=portal['event_info']['event_news'], sort_limit=5)
         event_list = []
         for item in result_event:
-            title = item.Title
-            date = item.getObject().creation_date.utcdatetime().strftime('%Y-%m-%d')
-            url = item.getObject().absolute_url()
-            event_list.append([title, date, url])
+	    if api.content.get_state(obj=item.getObject()) == 'published':
+                title = item.Title
+                date = item.getObject().creation_date.utcdatetime().strftime('%Y-%m-%d')
+                url = item.getObject().absolute_url()
+                event_list.append([title, date, url])
         return event_list
 
 

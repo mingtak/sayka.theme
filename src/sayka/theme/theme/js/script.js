@@ -63,14 +63,22 @@
 		// toggling child ul
 		menuWrap.find('li.dropdown > a').each(function () {
 			$(this).on('click', function (e) {
-				e.preventDefault();
+                        if( this.text.trim() != '首頁' && this.text.trim() != '結緣區' 
+                            && this.text.trim() != '訂單資訊' && this.text.trim() != '订单资讯' 
+                            &&this.text.trim() != '结缘区' && this.text.trim() != '首页'){
+                                 e.preventDefault();
+                            
+
 				$(this).parent('li.dropdown').children('ul').slideToggle();
 	
 				// adding class to item container
 				$(this).parent().toggleClass('open');
 	
 				return false;
-	
+			  }
+			else{
+			    return true
+			}
 			});
 		});
 	}

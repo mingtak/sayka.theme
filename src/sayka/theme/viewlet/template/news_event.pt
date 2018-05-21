@@ -1,34 +1,95 @@
-<html xmlns:v-on="http://www.vue.org/v-on"
-    xmlns:v-bind="http://www.vue.org/v-bind"
-    xmlns:v-model="http://www.vue.org/v-model">
-    <?python
-        from plone import api
-        abs_url = api.portal.get().absolute_url()
-    ?>
-    <section class="blog-carousel-section grey-bg">
-        <div class="auto-container">
-            <div class="three-item-carousel owl-carousel owl-theme">
-                <div class="news-block-three" tal:repeat="event view/catch_news">
-                <tal:def define="number repeat/event/number">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="${python:event[2]}/@@images/cover" alt="" />
-                            <div class="overlay-box">
-                                <a href="${abs_url}/event_info/event_news" class="play-btn"><span class="icon qb-play-arrow"></span></a>
-                                <div class="content">
-                                    <div class="tag"><a href="${abs_url}/event_info/event_news">最新活動${number}</a></div>
-                                    <h3><a href="${abs_url}/event_info/event_news">${python: event[0]}</a></h3>
-                                    <ul class="post-meta">
-                                        <li><span class="icon qb-clock"></span>${python: event[1]}</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+<?python
+    from plone import api
+    abs_url = api.portal.get().absolute_url()
+?>
+    <div class="sidebar-page-container">
+      <div class="auto-container">
+        <div class="row clearfix">
+          <div class="content-side col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <div class="category-tabs-box">
+              <div class="prod-tabs tabs-box">
+                <div class="tab-btns tab-buttons clearfix">
+                  <div class="pull-left">
+                    <div class="category">最新消息</div>
+                  </div>
+                  <div class="pull-right">
+                    <div>
+                      <div data-tab="#prod-alls" class="tab-btn">年度舉辦活動</div>
                     </div>
-                </tal:def>
+                  </div>
                 </div>
+                <div class="tabs-content">
+                  <div class="tab active-tab" id="prod-alls">
+                    <div class="content">
+                      <div class="row clearfix">
+                        <div class="column col-md-6 col-sm-6 col-xs-12">
+                          <div class="single-item-carousel owl-carousel owl-theme">
+                            <div class="news-block-two" tal:repeat="item view/catch_news">
+                              <div class="inner-box">
+                                <div class="image">
+                                  <a href="#">
+                                    <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" 
+                                      src="${python:item[2]}/@@images/cover" alt="" />
+                                  </a>
+                                  <div class="category">
+                                    <a href="#">最新活動${repeat/item/number}</a>
+                                  </div>
+                                </div>
+                                <div class="lower-box">
+                                  <h3>
+                                    <a href="#">${python:item[0]}</a>
+                                  </h3>
+                                  <ul class="post-meta">
+                                    <li>
+                                      <span class="icon fa fa-clock-o"></span>${python:item[1]}</li>
+                                  </ul>
+                                  <div class="text"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="column col-md-6 col-sm-6 col-xs-12" tal:repeat="item view/catch_news">
+                          <article class="widget-post">
+                            <figure class="post-thumb">
+                              <a href="blog-single.html">
+                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" 
+                                  src="${python: item[2]}/@@images/cover" alt="">
+                              </a>
+                              <div class="overlay">
+                                <span class="icon qb-play-arrow"></span>
+                              </div>
+                            </figure>
+                            <div class="text">
+                              <a href="blog-single.html">${python:item[0]}</a>
+                            </div>
+                            <div class="post-info">${python:item[1]}</div>
+                          </article>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="sidebar-side pull-right col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <aside class="sidebar default-sidebar left-sidebar">
+              <div class="sidebar-widget categories-widget">
+                <div class="sidebar-title">
+                  <h2>妙元大和尚</h2>
+                </div>
+              </div>
+              <div class="sidebar-widget sidebar-adds-widget">
+                 <div class="adds-block" style="background-image:url(/sayka/++theme++theme/images/resource/add-image-2.jpg);">
+                 <div class="inner-box">
+                   <div class="text">妙元法師 <span> facebook粉絲團</span></div>
+                      <a href="#" class="theme-btn btn-style-two">請幫忙按讚唷！</a>
+                    </div>
+                   </div>
+                 </div>
+             </aside>
+          </div>
         </div>
-    </section>
-
-</html>
+      </div>
+    </div>

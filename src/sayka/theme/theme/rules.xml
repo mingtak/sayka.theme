@@ -37,7 +37,8 @@
 
   <!-- main menu / rwd menu -->
   <replace css:theme-children="#bs-example-navbar-collapse-1 ul" css:content-children="#portal-globalnav" />
-  <replace css:content="#portal-globalnav" css:theme-children='#nav2' />
+  <replace css:content="#portal-globalnav" css:theme-children="#nav2" />
+  <replace css:content="#rwd_menu" css:theme="#rwd_menu" />
 
   <!-- Central column -->
   <replace css:theme="#content-container" method="raw">
@@ -100,21 +101,23 @@
   <drop css:theme=".preloader" />
 
   <drop css:theme="section.page-title" css:if-content=".template-cover_view" />
-  <drop css:theme='.galley-section.grey-bg' css:if-not-content=".template-cover_view"/>
-  <drop css:theme='.blog-carousel-section.grey-bg' />
-  <replace css:content='#viewlet-above-content-body' css:theme='.main-slider-five' />
-  <drop css:content='.documentFirstHeading' css:if-content=".template-cover_view"/>
-  <replace css:content-children='.documentFirstHeading' 
-           css:theme-children='.page-title .clearfix .pull-left h2' />
-  <replace css:content='#path_bar' css:theme-children='.page-title .pull-right' />
-  <replace css:content='#global_statusmessage .top-left' 
-           css:theme='.main-header .header-top .auto-container .top-left' />
-  <replace css:content='#global_statusmessage .pull-right' 
-           css:theme='.dropdown-menu.pull-right.cart-panel' />
-  <replace css:content='#portal-anontools ul li' 
-           css:theme='.top-right.pull-right .top-nav li' />
-  <replace css:content='#header_user_info' css:theme='.top-right.pull-right' />
-  <replace css:content='.portletContent.form-container' css:theme='.form-container' />
+  <replace css:content="#viewlet-below-content-body" css:theme=".galley-section.grey-bg" />
+<!--  <drop css:theme='.galley-section.grey-bg' css:if-not-content=".template-cover_view"/> -->
+  <drop css:theme=".blog-carousel-section.grey-bg" />
+  <replace css:content="#viewlet-above-content-body" css:theme-children=".main-slider-five" />
+  <drop css:content=".documentFirstHeading" css:if-content=".template-cover_view"/>
+  <replace css:content-children=".documentFirstHeading" 
+           css:theme-children=".page-title .clearfix .pull-left h2" />
+  <replace css:content="#path_bar" css:theme-children=".page-title .pull-right" />
+  <replace css:content="#global_statusmessage .top-left" 
+           css:theme=".main-header .header-top .auto-container .top-left" />
+  <replace css:content="#global_statusmessage .pull-right" 
+           css:theme=".dropdown-menu.pull-right.cart-panel" />
+  <replace css:content="#portal-anontools ul li" 
+           css:theme=".top-right.pull-right .top-nav li" />
+  <replace css:content="#header_user_info" css:theme=".top-right.pull-right" />
+  <replace css:content=".portletContent.form-container" css:theme=".form-container" />
+  
 </rules>
 </rules>
 

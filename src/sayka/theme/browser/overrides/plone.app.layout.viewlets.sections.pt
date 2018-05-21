@@ -1,4 +1,4 @@
-<tal:sections
+segmentation<tal:sections
      xmlns:tal="http://xml.zope.org/namespaces/tal"
      xmlns:metal="http://xml.zope.org/namespaces/metal"
      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
@@ -14,7 +14,7 @@
           tal:define="selected_tab python:view.selected_portal_tab">
           <?python
           from plone import api
-           
+          abs_url = api.portal.get().absolute_url()
           ?>
           <li class='dropdown' tal:repeat='item portal_tabs'>
               <a href="${python:item['url']}">
@@ -34,4 +34,57 @@
   </div>
 </nav>
 
+    <section class="hidden-bar left-align" id="rwd_menu">
+        <div class="hidden-bar-closer">
+            <button><span class="qb-close-button"></span></button>
+        </div>
+        <div class="hidden-bar-wrapper">
+            <div class="logo">
+                <a href="${abs_url}"></a>
+            </div>
+            <div class="side-menu">
+                <!--navigation-->
+                 <ul class="navigation clearfix" tal:define="selected_tab python:view.selected_portal_tab">
+                     <li class='dropdown' tal:repeat='item portal_tabs'>
+                         <a href="${python:item['url']}">
+                                ${python:item['name']}
+                          </a>
+                           <ul tal:condition='repeat/item/index'>
+                                <li tal:repeat="sec_item python: api.content.find(path='/sayka/' + item['id'] ,
+                                    depth=1, portal_type='Folder')">
+                                    <a href="${sec_item/getURL}">
+                                           ${python:sec_item.Title}
+                                    </a>
+                                </li>
+                            </ul>
+                      </li>
+                </ul>
+            </div>
+            <div class="options-box">
+                <div class="mobile-cart">
+                    <a href="shop-single.html" class="clearfix">
+                        <div class="pull-left">
+                            <div class="text">購物車</div>
+                        </div>
+                        <div class="pull-right">
+                            <span class="icon fa fa-shopping-cart"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="language dropdown"><a class="btn btn-default dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="#"> 繁體中文 <span class="icon fa fa-angle-down"></span></a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><a href='javascript:(function(){var s=document.getElementById("tongwenlet_tw");if(s!=null){document.body.removeChild(s);}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="https://rawgit.com/skofkyo/userChromeJS/master/UserScriptLoader/bookmarklet_tw.js";s.id="tongwenlet_tw";document.body.appendChild(s);})();'>繁體</a></li>
+                        <li><a href='javascript:(function(){var s=document.getElementById("tongwenlet_cn");if(s!=null){document.body.removeChild(s);}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="https://rawgit.com/skofkyo/userChromeJS/master/UserScriptLoader/bookmarklet_cn.js";s.id="tongwenlet_cn";document.body.appendChild(s);})();'>簡體</a></li>
+                    </ul>
+                </div>
+                <ul class="social-links clearfix">
+                    <li><a href="https://www.facebook.com/%E5%A6%99%E5%85%83%E6%B3%95%E5%B8%AB-327487724055238/"><span class="fa fa-facebook-square"></span></a></li>
+                </ul>
+            </div>
+        </div><!-- / Hidden Bar Wrapper -->
+        
+    </section>
+
+
 </tal:sections>
+                                                        
