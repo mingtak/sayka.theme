@@ -3,7 +3,7 @@ from plone import api
 portal = api.portal.get()
 abs_url = portal.absolute_url()
 ?>
-<div class="top-right pull-right col-md-6 col-sm-12 col-xs-12" id='header_user_info' style='display:none'>
+<div class="top-right pull-right col-md-6 col-sm-6 col-xs-12" id='header_user_info' style='display:none'>
     <ul class="top-nav">
         <tal:cond condition="view/anonymouse">
             <li><a href="${abs_url}/login">登入</a></li>

@@ -18,7 +18,9 @@ abs_url = portal.absolute_url()
 ?>
 <style>
 .go_confirm_cart{
-    padding: 10px 480px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
     background: #FCE38A;
     transition: 0.5s;
     color: rgb(102, 102, 102);
@@ -27,9 +29,13 @@ abs_url = portal.absolute_url()
     background: #F08A5D;
     color: white;
 }
+.go_confirm_container{
+    margin: 0 0 25px 95px;
+}
+@media()
 </style>
-<div style="margin-bottom: 25px;margin-left: 95px;">
-    <a href="${abs_url}/@@confirm_cart" class="go_confirm_cart" >結帳</a>
+<div>
+    <a href="${abs_url}/@@confirm_cart" class="go_confirm_cart col-lg-12 col-sm-12 col-xs-12" >結帳</a>
 </div>
 <tal:rep repeat="content view/context/contentValues">
     <tal:condition condition="python: api.content.get_state(obj=content) == 'published'">

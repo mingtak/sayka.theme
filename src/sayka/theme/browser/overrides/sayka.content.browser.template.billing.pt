@@ -33,37 +33,85 @@ label{
 input[type="submit"]{
     padding: 5px 10px;
     border: 0;
-    width:500px;
     transition: 0.5s;
     background: #C0FFC2;
 }
 input[type="submit"]:hover{
     background: #00B8A9;
 }
+input[type="submit"]:focus{
+    background: #00B8A9;
+}
+input[type="radio"]:checked + label span {
+    background:url(/sayka/++theme++theme/images/check_radio_sheet.png) -19px top no-repeat;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label {
+    color:#666666;
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-2px 10px 0 0;
+    vertical-align:middle;
+    background:url(/sayka/++theme++theme/images/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"]:checked + label span {
+    background:url(/sayka/++theme++theme/images/check_radio_sheet.png) -19px top no-repeat;
+}
+
+input[type="checkbox"] + label {
+    color:#666666;
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-2px 10px 0 0;
+    vertical-align:middle;
+    background:url(/sayka/++theme++theme/images/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+
 </style>
 <form action="check_profile" method="post">
     <div style="font-size: 18px;font-weight: bold;">取或時間:</div>
     <div>
         <label>
-            <input type="radio" name="send_time" value="morning" required/>早上09:00~12:00
+            <input type="radio" name="send_time" id='morning' value="morning" required/>
+            <label for="morning"><span></span>早上09:00~12:00</label>            
         </label>
         <label>
-            <input type="radio" name="send_time" value="afternoon" required/>下午12:00~17:00
+            <input type="radio" name="send_time" id="afternoon" value="afternoon" required/>
+            <label for="afternoon"><span></span>下午12:00~17:00</label>
         </label>
     </div>        
     <div style="font-size: 18px;font-weight: bold;">取或方式:</div>
     <div>
         <label>
-            <input type="radio" name="send_type" value="CVS" id='csv' required/>超商取貨
+            <input type="radio" name="send_type" value="CVS" id='csv' required/>
+            <label for="csv"><span></span>超商取貨</label>
         </label>
         <label> 
-            <input type="radio" name="send_type" value="Home" id='home' required/>宅配
+            <input type="radio" name="send_type" value="Home" id='home' required/>
+            <label for="home"><span></span>宅配</label>
         </label>
         <div style='position:absolute;right:0;top:0;border:1px solid black;display:none' id='csv_notic'>
-	    <h3 style='text-align:center;'>*選取<span style='color:#B83B5E'>超商付款</span>請再結帳畫面
-		 點選<span style='color:#B83B5E'>返回商店</span>按鈕</h3>
+	        <h3 style='text-align:center;'>*選取<span style='color:#B83B5E'>超商付款</span>請再結帳畫面
+		     點選<span style='color:#B83B5E'>返回商店</span>按鈕</h3>
             <img src="/++theme++theme/images/billing_csv.png" />
-	</div>
+	    </div>
     </div>    
     <!-- 訂購人 -->
     <div style="font-size: 18px;font-weight: bold;">訂購人</div>
@@ -75,7 +123,7 @@ input[type="submit"]:hover{
         <div>聯絡手機：<input type="text" name="buyer_cellNo" id="buyer_cellNo" value="${view/user_cellNo}" 
                            maxlength="10" required  /></div>
         <div>地址：
-            <select name="buyer_city" id="buyer_city" data-default="${view/user_city}" required >
+            <select name="buyer_city" id="buyer_city"  required >
                 <option>請選擇縣市</option>
                 <option tal:repeat="city view/city" value="${city}">${city}</option>
             </select>
@@ -98,7 +146,8 @@ input[type="submit"]:hover{
             <option value="">選擇通訊錄</option>
         </select>-->
         <label>
-            <input type="checkbox" class="same_with_buyer" data-same="receiver" />同訂購人資料
+            <input type="checkbox" class="same_with_buyer" data-same="receiver" id="same_reciver" />
+            <label for="same_reciver"><span></span>同訂購人資料</label>
         </label>
         <!--<label>
             <input type="checkbox" name="add_receiver"/>加入或更新常用通訊錄
@@ -115,6 +164,7 @@ input[type="submit"]:hover{
                 <option tal:repeat="city view/city" value="${city}">${city}</option>
             </select>
             <select name="receiver_district" id="receiver_district" required>
+                <option>請選擇縣市</option>
             </select>
             <input type="number" name="receiver_zip" id="receiver_zip" readonly
                 style="width:45px;text-align-center"/>
@@ -125,10 +175,12 @@ input[type="submit"]:hover{
     <div style="font-size: 18px;font-weight: bold;">發票資訊：</div>
     <div>
         <label>
-            <input type="radio" name="invoice_type" value="invoice_three"/>三聯式發票
+            <input type="radio" name="invoice_type" value="invoice_three" id="invoice_three"/>
+            <label for="invoice_three"><span></span>三聯式發票</label>
         </label>
         <label>
-            <input type="radio" name="invoice_type" value="invoice_two"/>二聯式發票
+            <input type="radio" name="invoice_type" value="invoice_two" id="invoice_two"/>
+            <label for="invoice_two"><span></span>二聯式發票</label>
         </label>
       <!--
         <label>
@@ -145,7 +197,8 @@ input[type="submit"]:hover{
         <div>發票抬頭<input type="text" name="invoice_name" id="invoice_name"/></div>
         <div>寄送地址
             <label>
-                <input type="checkbox" class="same_with_buyer" data-same="invoice"/>同訂購人資料
+                <input type="checkbox" class="same_with_buyer" data-same="invoice" id="same_invoice" />
+                <label for="same_invoice"><span></span>同訂購人資料</label>
             </label>
         </div>
         <div>
@@ -154,6 +207,7 @@ input[type="submit"]:hover{
                     <option tal:repeat="city view/city" value="${city}">${city}</option>
             </select>
             <select name="invoice_district" id="invoice_district">
+                <option>請選擇縣市</option>
             </select>
             <input type="text" name="invoice_zip" id="invoice_zip"
                 style="width:35px;text-align-center"/>
@@ -161,7 +215,7 @@ input[type="submit"]:hover{
         </div>
     </div> 
     <div style="text-align:center;margin-top:15px">
-        <input type="submit" value="結帳" />
+        <input type="submit" value="結帳" class='col-lg-12 col-sm-12 col-xs-12'/>
     </div>
 </form>
 

@@ -62,7 +62,7 @@ segmentation<tal:sections
             </div>
             <div class="options-box">
                 <div class="mobile-cart">
-                    <a href="shop-single.html" class="clearfix">
+                    <a href="${abs_url}/@@confirm_cart" class="clearfix">
                         <div class="pull-left">
                             <div class="text">購物車</div>
                         </div>

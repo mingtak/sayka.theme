@@ -2,7 +2,7 @@
     xmlns:v-bind="http://www.vue.org/v-bind"
     xmlns:v-model="http://www.vue.org/v-model">
 
-    <div class="top-left col-md-6 col-sm-12 col-xs-12 news_scroll" style='display:none'>
+    <div class="top-left col-md-6 col-sm-6 col-xs-12 news_scroll" style='display:none'>
         <div class="trend">．最新消息: </div>
         <div class="single-item-carousel owl-carousel owl-theme" >
             <div class="slide" tal:repeat="result view/catch_news">

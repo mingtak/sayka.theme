@@ -34,8 +34,14 @@ td{
     background: #B83B5E;
     color: white;
 }
+.confirm_del:active{
+    background: #B83B5E;
+    color: white;
+}
+
 .edit_profile{
-    padding: 10px 480px;
+    padding: 10px;
+    text-align: center;
     background: #FCE38A;
     transition: 0.5s;
     color: rgb(102, 102, 102);
@@ -44,6 +50,11 @@ td{
     background: #F08A5D;
     color: white;
 }
+.edit_profile:focus{
+    background: #F08A5D;
+    color: white;
+}
+
 input[type='number']{
     text-align: center;
     font-size: 18px;
@@ -51,11 +62,15 @@ input[type='number']{
     width: 75px;
     padding-left: 10px;
 }
-
+@media (max-width: 576px){
+    .col-xs-2{
+        padding: 0;
+    }
+}
 </style>
-<table>
-    <tr style="margin-botton:20px">
-        <th style="width:180px">商品圖片</th>
+<table style='width:100%'>
+    <tr style="margin-bottom:20px" class='title'>
+        <th style="width:500px">商品圖片</th>
         <th style="width:250px">商品名稱</th>
         <th style="width:200px">數量</th>
         <th style="width:200px">價格</th>
@@ -64,14 +79,14 @@ input[type='number']{
     <tal:repeat repeat="item view/shopCart">
         <tal:findContent define="obj python:api.content.find(id=item[0], context=portal)[0].getObject()">
             <tr>
-                <td><a href="${obj/absolute_url}">
-                        <img src="${obj/absolute_url}/@@images/image_1/mini" style='height:180px'/>
+                <td class='col-sm-2'><a href="${obj/absolute_url}">
+                        <img src="${obj/absolute_url}/@@images/image_1/mini" style='padding:2px 0'/>
                     </a> 
                 </td>
                 <td><h4>${obj/title}</h4></td>
                 <td><input type="number" value="${python:item[1]}" 
                         class="number_update" data-item_id="${obj/id}" min="1"/> </td>
-                <td><h4>${obj/sale_price}</h4></td>
+                <td><h4 style='color:red'>${obj/sale_price}</h4></td>
                 <td><button data-item_id="${obj/id}" class="confirm_del">刪除</button></td>
             </tr>
         </tal:findContent>
@@ -79,12 +94,13 @@ input[type='number']{
    
 </table>
 
-<h2 style='margin:20px 140px 20px 0;display:flex;justify-content:flex-end'>
+<h2 style='float:right;margin:15px 0'>
               總金額:<span style='color:#e73f43' id='total_price'>${view/total_price}</span>元 
 </h2>
 
-<div style="margin-left:10px">
-    <a href="${abs_url}/billing" class="edit_profile">填寫資料</a>
+<div style="">
+    <a href="${abs_url}/billing" class="edit_profile content-side col-lg-12 col-md-12 
+        col-sm-12 col-xs-12">填寫資料</a>
 </div>
 
 </metal:content-core>
