@@ -11,27 +11,8 @@
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
-<style>
-th,td{
-    text-align:center;
-    border-bottom: 1px solid #ccc;
-    height: 45px;
-    padding: 10px 0;
-}
-th{
-    font-size: 18px;
-}
-td{
-    font-size: 16px;
-}
-input[type=submit]{
-    padding: 5px 12px;
-}
-.collapse{
-     transition: height 0.6s;
-}
-</style>
-        <div style='display: flex;justify-content:space-around'>
+        <div style='display: flex;justify-content:space-around;border-bottom:1px solid #ccc;
+                    background: #2b2e4a;color:white;padding:10px;font-size:17px'>
             <div style="width:15%">交易編號</div>
             <div style="width:15%">金額</div>
             <div style="width:25%">交易日期</div>
@@ -39,12 +20,12 @@ input[type=submit]{
             <div style='width:15%'>物流狀況</div>
             <div style='width:15%'></div>
         </div>
-        <br/>        
         <tal:repeat define="order_data view/order_data" repeat="sort_tradeno view/sort_tradeno">
-            <div style='display:flex;justify-content:space-between'>
+            <div style='display:flex;justify-content:space-between;padding: 10px 5px;border-bottom: 1px solid #ccc
+                ;font-size: 16px'>
                 <div style='width:15%'>${sort_tradeno}</div>
                 <div style='width:15%'>${python:order_data[sort_tradeno]['total_amount']}</div>
-                <div style='width:25%'>${python:order_data[sort_tradeno]['TradeDate'][:10]}</div>
+                <div style='width:25%'>${python:order_data[sort_tradeno]['TradeDate']}</div>
                 <div style='width:15%'>${python:order_data[sort_tradeno]['status']}</div>
                 <div tal:condition="python:order_data[sort_tradeno]['message']"  style='width:15%'>
                     ${python:order_data[sort_tradeno]['message']}
@@ -63,23 +44,21 @@ input[type=submit]{
                 <div  style='width:15%'
                     data-toggle="collapse" data-target="#${sort_tradeno}" aria-expanded="false" 
                     aria-controls="${sort_tradeno}">
-                    <span style='color:white;background:#97de95;'>更多資訊</span>
+                    <span style='color:white;background:#97de95;cursor:pointer;padding:5px'>更多資訊</span>
                 </div>
             </div>
-            <div class="collapse" id="${sort_tradeno}">
-                <div style='display:flex;justify-content:space-around'>
+            <div class="collapse" id="${sort_tradeno}" style='text-align: center;background:#dbe2ef; padding: 10px'>
+                <div style='display:flex;justify-content:space-around;font-size:17px;padding-bottom: 10px;border-bottom:1px solid #ccc'>
                     <div style='width:50%'>交易明細</div>
                     <div style='width:20%'>送達時間</div>
                     <div style='width:30%'>取貨方式</div>
                 </div>
-                <div class="card card-body"  style='display:flex;justify-content:space-around'>
+                <div class="card card-body"  style='display:flex;justify-content:space-around;font-size:15px;padding: 5px 0'>
                     <div style='width:50%'>${python:order_data[sort_tradeno]['detail']}</div>
                     <div style='width:20%'>${python:order_data[sort_tradeno]['send_type']}</div>
                     <div style='width:30%'>${python:order_data[sort_tradeno]['status']}</div>  
                 </div>
             </div>
-        <hr>
-        <br/>
         </tal:repeat>
 </metal:content-core>
 </metal:content-core>

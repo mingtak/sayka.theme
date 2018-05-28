@@ -3,11 +3,13 @@
          <div class="single-item-carousel owl-carousel owl-theme">
              <div class="slide">
                     <div class="row clearfix">
-                        <div class="column col-md-6 col-sm-6 col-xs-12">
+                        <div class="column col-md-6 col-sm-6 col-xs-12" >
                             <div class="default-gallery-block">
                              <div class="inner-box">
-                                 <a href="/sayka/++theme++theme/images/gallery/1.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/1.jpg" alt="" /></a>
-                                 <div class="text">活動集錦照片標題-01</div>
+                                 <a href="${python: view.gallery_brains[0].getObject().absolute_url()}" class="lightbox-image" data-fancybox-group="gallery-two">
+                                 <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" 
+                                    src="${python: view.gallery_brains[0].getObject().absolute_url()}"  style="height:536px;width:589px" /></a>
+                                 <div class="text">${python: view.gallery_brains[0].Title}</div>
                                 </div>
                             </div>
                         </div>
@@ -16,24 +18,30 @@
                                 <div class="inner-column col-md-12 col-sm-12 col-xs-12">
                                     <div class="default-gallery-block">
                                <div class="inner-box">
-                                            <a href="/sayka/++theme++theme/images/gallery/2.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/2.jpg" alt="" /></a>
-                                 <div class="text">活動集錦照片標題-02</div>
+                                            <a href="${python: view.gallery_brains[1].getObject().absolute_url()}" class="lightbox-image" data-fancybox-group="gallery-two">
+                                    <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" 
+                                        src="${python: view.gallery_brains[1].getObject().absolute_url()}"  style="height:269px;width:589px" /></a>
+                                 <div class="text">${python: view.gallery_brains[1].Title}</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="inner-column col-md-6 col-sm-6 col-xs-12">
                                     <div class="default-gallery-block">
                                <div class="inner-box">
-                                            <a href="/sayka/++theme++theme/images/gallery/3.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/3.jpg" alt="" /></a>
-                                 <div class="text">活動集錦照片標題-03</div>
+                                            <a href="${python: view.gallery_brains[2].getObject().absolute_url()}" class="lightbox-image" data-fancybox-group="gallery-two">
+                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" 
+                                               style="height:267px;width:292px"  src="${python: view.gallery_brains[2].getObject().absolute_url()}" alt="" /></a>
+                                 <div class="text">${python: view.gallery_brains[2].Title}</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="inner-column col-md-6 col-sm-6 col-xs-12">
                                     <div class="default-gallery-block">
                                <div class="inner-box">
-                                         <a href="/sayka/++theme++theme/images/gallery/4.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/4.jpg" alt="" /></a>
-                                 <div class="text">活動集錦照片標題-04</div>
+                                         <a href="${python: view.gallery_brains[3].getObject().absolute_url()}" class="lightbox-image" data-fancybox-group="gallery-two">
+                                         <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" 
+                                              style="height:267px;width:292px"   src="${python: view.gallery_brains[3].getObject().absolute_url()}" alt="" /></a>
+                                 <div class="text">${python: view.gallery_brains[3].Title}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -47,8 +55,10 @@
                         <div class="column col-md-6 col-sm-6 col-xs-12">
                             <div class="default-gallery-block">
                              <div class="inner-box">
-                                 <a href="/sayka/++theme++theme/images/gallery/1.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/1.jpg" alt="" /></a>
-                                 <div class="text">活動集錦照片標題-05</div>
+                                 <a href="${python: view.gallery_brains[4].getObject().absolute_url()}" class="lightbox-image" data-fancybox-group="gallery-two">
+                                 <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" 
+                                      src="${python: view.gallery_brains[4].getObject().absolute_url()}"  style="height:541px" /></a>
+                                 <div class="text">${python: view.gallery_brains[4].Title}</div>
                                 </div>
                             </div>
                         </div>
@@ -57,24 +67,30 @@
                                 <div class="inner-column col-md-12 col-sm-12 col-xs-12">
                                     <div class="default-gallery-block">
                                <div class="inner-box">
-                                            <a href="/sayka/++theme++theme/images/gallery/2.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/2.jpg" alt="" /></a>
-                                 <div class="text">活動集錦照片標題-06</div>
+                                            <a href="${python: view.gallery_brains[5].getObject().absolute_url()}" class="lightbox-image" data-fancybox-group="gallery-two">
+                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" style="height:269px;width:589px" 
+                                               src="${python: view.gallery_brains[5].getObject().absolute_url()}" /></a>
+                                 <div class="text">${python: view.gallery_brains[5].Title}</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="inner-column col-md-6 col-sm-6 col-xs-12">
                                     <div class="default-gallery-block">
                                <div class="inner-box">
-                                            <a href="/sayka/++theme++theme/images/gallery/3.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/3.jpg" alt="" /></a>
-                                 <div class="text">活動集錦照片標題-06</div>
+                                            <a href="${python: view.gallery_brains[6].getObject().absolute_url()}" class="lightbox-image" data-fancybox-group="gallery-two">
+                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms"  style="height:267px;width:292px"
+                                                src="${python: view.gallery_brains[6].getObject().absolute_url()}" /></a>
+                                 <div class="text">${python: view.gallery_brains[6].Title}</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="inner-column col-md-6 col-sm-6 col-xs-12">
                                     <div class="default-gallery-block">
                                <div class="inner-box">
-                                         <a href="/sayka/++theme++theme/images/gallery/4.jpg" class="lightbox-image" data-fancybox-group="gallery-two"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="/sayka/++theme++theme/images/gallery/4.jpg" alt="" /></a>
-                                 <div class="text">活動集錦照片標題-08</div>
+                                         <a href="${python: view.gallery_brains[7].getObject().absolute_url()}" class="lightbox-image" data-fancybox-group="gallery-two">
+                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" 
+                                                src="${python: view.gallery_brains[7].getObject().absolute_url()}" style="height:267px;width:292px" /></a>
+                                 <div class="text">${python: view.gallery_brains[7].Title}</div>
                                         </div>
                                     </div>
                                 </div>

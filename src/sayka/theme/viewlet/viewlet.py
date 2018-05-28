@@ -67,9 +67,11 @@ class NewsEvent(base.ViewletBase):
 
 
 class Gallery(base.ViewletBase):
-    """"""
-
-
+    def update(self):
+        request = self.request
+        portal = api.portal.get()
+        gallery_brains = api.content.find(context=portal['gallery'], port_type='Image')
+        self.gallery_brains = gallery_brains
 
 
 class HeaderUserInfo(base.ViewletBase):
