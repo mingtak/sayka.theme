@@ -31,46 +31,56 @@ input[type=submit]{
      transition: height 0.6s;
 }
 </style>
-    <table class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <tr>
-            <th style="width:15%">交易編號</th>
-            <th style="width:15%">金額</th>
-            <th style="width:28%">交易日期</th>
-            <th style="width:15%">付款狀況</th>
-            <th style='width:15%'>物流狀況</th>
-            <th></th>
-        </tr>
+        <div style='display: flex;justify-content:space-around'>
+            <div style="width:15%">交易編號</div>
+            <div style="width:15%">金額</div>
+            <div style="width:25%">交易日期</div>
+            <div style="width:15%">付款狀況</div>
+            <div style='width:15%'>物流狀況</div>
+            <div style='width:15%'></div>
+        </div>
+        <br/>        
         <tal:repeat define="order_data view/order_data" repeat="sort_tradeno view/sort_tradeno">
-            <tr>
-                <th>${sort_tradeno}</th>
-                <td>${python:order_data[sort_tradeno]['total_amount']}</td>
-                <td>${python:order_data[sort_tradeno]['TradeDate'][:10]}</td>
-                <td>${python:order_data[sort_tradeno]['status']}</td>
-                <td tal:condition="python:order_data[sort_tradeno]['message']">
+            <div style='display:flex;justify-content:space-between'>
+                <div style='width:15%'>${sort_tradeno}</div>
+                <div style='width:15%'>${python:order_data[sort_tradeno]['total_amount']}</div>
+                <div style='width:25%'>${python:order_data[sort_tradeno]['TradeDate'][:10]}</div>
+                <div style='width:15%'>${python:order_data[sort_tradeno]['status']}</div>
+                <div tal:condition="python:order_data[sort_tradeno]['message']"  style='width:15%'>
                     ${python:order_data[sort_tradeno]['message']}
-                </td>
-                <td tal:condition="not:python:order_data[sort_tradeno]['message']">
-                <?python
+                </div>
+                <div tal:condition="not:python:order_data[sort_tradeno]['message']"  style='width:15%'>
+                 <?python
                     from plone import api
                     abs_url = api.portal.get().absolute_url()
-                ?>
+                  ?>
                     <form id="allPay-Form" name="allPayForm" method="post" target="_self" 
                         action="${abs_url}/logistics_map" style="disply: none;">
                         <input type='hidden' name='MerchantTradeNo' value='${sort_tradeno}' />
                         <input type="submit" class="large" id="payment-btn" value="補齊物流資訊"/>
                     </form>
-                </td>
-                <td class='more_info' style='color:white;background:#97de95;'
+                </div>
+                <div  style='width:15%'
                     data-toggle="collapse" data-target="#${sort_tradeno}" aria-expanded="false" 
-                    aria-controls="${sort_tradeno}">更多資訊</td>
-            </tr>
-            <tr class='collapse' id="${sort_tradeno}">
-                <td><span style='font-weight:bold'>取貨方式:</span>${python:order_data[sort_tradeno]['send_type']}</td>
-                <td><span style='font-weight:bold'>送達時間:</span>${python:order_data[sort_tradeno]['send_time']}</td>
-                <td><span style='font-weight:bold'>訂單明細:</span>${python:order_data[sort_tradeno]['detail']}</td>
-            </tr>
+                    aria-controls="${sort_tradeno}">
+                    <span style='color:white;background:#97de95;'>更多資訊</span>
+                </div>
+            </div>
+            <div class="collapse" id="${sort_tradeno}">
+                <div style='display:flex;justify-content:space-around'>
+                    <div style='width:50%'>交易明細</div>
+                    <div style='width:20%'>送達時間</div>
+                    <div style='width:30%'>取貨方式</div>
+                </div>
+                <div class="card card-body"  style='display:flex;justify-content:space-around'>
+                    <div style='width:50%'>${python:order_data[sort_tradeno]['detail']}</div>
+                    <div style='width:20%'>${python:order_data[sort_tradeno]['send_type']}</div>
+                    <div style='width:30%'>${python:order_data[sort_tradeno]['status']}</div>  
+                </div>
+            </div>
+        <hr>
+        <br/>
         </tal:repeat>
-    </table>
 </metal:content-core>
 </metal:content-core>
 
