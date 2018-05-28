@@ -18,31 +18,33 @@ th,td{
     height: 45px;
     padding: 10px 0;
 }
+th{
+    font-size: 18px;
+}
+td{
+    font-size: 16px;
+}
 input[type=submit]{
     padding: 5px 12px;
 }
+.collapse{
+     transition: height 0.6s;
+}
 </style>
-    <table>
+    <table class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <tr>
-            <th style="width:95px">交易編號</th>
-            <th style="width:400px">交易明細</th>
-            <th style="width:60px">金額</th>
-            <th style="width:130px">交易日期</th>
-            <th style="width:130px">截止日期</th>
-            <th style="width:80px">送達時間</th>
-            <th style="width:80px">取貨方式</th>
-            <th style="width:80px">付款狀況</th>
-            <th>物流資訊</th>
+            <th style="width:15%">交易編號</th>
+            <th style="width:15%">金額</th>
+            <th style="width:28%">交易日期</th>
+            <th style="width:15%">付款狀況</th>
+            <th style='width:15%'>物流狀況</th>
+            <th></th>
         </tr>
         <tal:repeat define="order_data view/order_data" repeat="sort_tradeno view/sort_tradeno">
             <tr>
                 <th>${sort_tradeno}</th>
-                <td>${python:order_data[sort_tradeno]['detail']}</td>
                 <td>${python:order_data[sort_tradeno]['total_amount']}</td>
-                <td>${python:order_data[sort_tradeno]['TradeDate']}</td>
-                <td>${python:order_data[sort_tradeno]['ExpireDate']}</td>
-                <td>${python:order_data[sort_tradeno]['send_time']}</td>
-                <td>${python:order_data[sort_tradeno]['send_type']}</td>
+                <td>${python:order_data[sort_tradeno]['TradeDate'][:10]}</td>
                 <td>${python:order_data[sort_tradeno]['status']}</td>
                 <td tal:condition="python:order_data[sort_tradeno]['message']">
                     ${python:order_data[sort_tradeno]['message']}
@@ -52,14 +54,22 @@ input[type=submit]{
                     from plone import api
                     abs_url = api.portal.get().absolute_url()
                 ?>
-                    <form id="allPay-Form" name="allPayForm" method="post" target="_self" action="${abs_url}/logistics_map" style="disply: none;">
+                    <form id="allPay-Form" name="allPayForm" method="post" target="_self" 
+                        action="${abs_url}/logistics_map" style="disply: none;">
                         <input type='hidden' name='MerchantTradeNo' value='${sort_tradeno}' />
                         <input type="submit" class="large" id="payment-btn" value="補齊物流資訊"/>
                     </form>
                 </td>
+                <td class='more_info' style='color:white;background:#97de95;'
+                    data-toggle="collapse" data-target="#${sort_tradeno}" aria-expanded="false" 
+                    aria-controls="${sort_tradeno}">更多資訊</td>
+            </tr>
+            <tr class='collapse' id="${sort_tradeno}">
+                <td><span style='font-weight:bold'>取貨方式:</span>${python:order_data[sort_tradeno]['send_type']}</td>
+                <td><span style='font-weight:bold'>送達時間:</span>${python:order_data[sort_tradeno]['send_time']}</td>
+                <td><span style='font-weight:bold'>訂單明細:</span>${python:order_data[sort_tradeno]['detail']}</td>
             </tr>
         </tal:repeat>
-
     </table>
 </metal:content-core>
 </metal:content-core>
