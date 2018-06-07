@@ -60,6 +60,40 @@
                 </div>
             </div>
         </tal:repeat>
+<style>
+table tr th,td{
+    padding:10px;
+}
+</style>
+
+        <table class='col-md-12 col-xs-12 col-sm-12'>
+            <tr style='border-bottom:1px solid #ccc;background: #2b2e4a;color:white;font-size:17px'> 
+                <th >交易編號</th>
+                <th >交易日期</th>
+                <th>付款狀況</th>
+                <th>物流狀況</th>
+            </tr>
+            <tal:repeat define="order_data view/order_data" repeat="sort_tradeno view/sort_tradeno">
+                <tr style='padding: 10px 5px;border-bottom: 1px solid #ccc;font-size: 16px'>
+                    <td>${sort_tradeno}</td>
+                    <td>${python:order_data[sort_tradeno]['TradeDate'][:10]}</td>
+                    <td>${python:order_data[sort_tradeno]['status']}</td>
+                    <td tal:condition="not:python:order_data[sort_tradeno]['message']">
+                         <?python
+                            from plone import api
+                            abs_url = api.portal.get().absolute_url()
+                         ?>
+                        <form id="allPay-Form" name="allPayForm" method="post" target="_self"
+                            action="${abs_url}/logistics_map" style="disply: none;">
+                            <input type='hidden' name='MerchantTradeNo' value='${sort_tradeno}' />
+                            <input type="submit" class="large" id="payment-btn" value="補齊物流資訊"/>
+                       </form>
+                   </td>
+                </tr>
+            </tal:repeat>
+        </table>
+
+
 </metal:content-core>
 </metal:content-core>
 

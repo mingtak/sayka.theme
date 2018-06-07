@@ -83,7 +83,14 @@ input[type="checkbox"] + label span {
     background:url(/sayka/++theme++theme/images/check_radio_sheet.png) left top no-repeat;
     cursor:pointer;
 }
-
+#csv_notic{
+    border:1px solid black;
+    display:none;
+}
+#csv_notic img{
+    width: 100%;
+    height: 150px;
+}
 </style>
 <form action="check_profile" method="post">
     <div style="font-size: 18px;font-weight: bold;">取或時間:</div>
@@ -107,7 +114,7 @@ input[type="checkbox"] + label span {
             <input type="radio" name="send_type" value="Home" id='home' required/>
             <label for="home"><span></span>宅配</label>
         </label>
-        <div style='position:absolute;right:0;top:0;border:1px solid black;display:none' id='csv_notic'>
+        <div  id='csv_notic'>
 	        <h3 style='text-align:center;'>*選取<span style='color:#B83B5E'>超商付款</span>請再結帳畫面
 		     點選<span style='color:#B83B5E'>返回商店</span>按鈕</h3>
             <img src="/++theme++theme/images/billing_csv.png" />
