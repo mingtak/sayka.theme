@@ -11,6 +11,26 @@
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
+
+<div class="flower">
+<?python
+from plone import api
+portal = api.portal.get()
+?>
+    <style>
+    .sidebar-page-container {
+        background-image: url(${portal/absolute_url}/++theme++theme/images/flower_bg.png);
+        background-repeat: no-repeat;
+    }
+    /* 小尺寸: 480px 以下 */
+    @media (max-width: 480px) {
+        .sidebar-page-container {
+            background-image: none;
+        }
+    }
+    </style>
+</div>
+
   <div metal:define-macro="text-field-view"
       id="parent-fieldname-text" class="stx"
       tal:define="text view/text"
@@ -18,7 +38,6 @@
       tal:attributes="class view/text_class">
     <div metal:define-slot="inside" tal:replace="structure text">The body</div>
   </div>
-
   <metal:listingmacro define-macro="listing">
     <tal:results define="batch view/batch">
       <tal:listing condition="batch">

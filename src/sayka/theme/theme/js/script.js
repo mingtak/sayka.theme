@@ -22,7 +22,7 @@
 			var windowpos = $(window).scrollTop();
 			var siteHeader = $('.main-header');
 			var scrollLink = $('.scroll-to-top');
-			if (windowpos >= 250) {
+			if (windowpos >= 550) {
 				siteHeader.addClass('fixed-header');
 				scrollLink.fadeIn(300);
 			} else {

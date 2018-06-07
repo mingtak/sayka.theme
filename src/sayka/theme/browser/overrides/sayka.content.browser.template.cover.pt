@@ -14,7 +14,10 @@
 from plone import api
 abs_url = api.portal.get().absolute_url()
 ?>
+
 <!--banner event  gallery 都寫在viewlets裡  -->
+
+
 
 
 </metal:content-core>

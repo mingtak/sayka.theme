@@ -17,13 +17,20 @@
 from plone import api
 portal = api.portal.get()
 ?>
-<style>
-.sidebar-page-container {
-    background-image: url(${portal/absolute_url}/++theme++theme/images/flower_bg.png);
-    background-repeat: no-repeat;
-}
-</style>
+    <style>
+    .sidebar-page-container {
+        background-image: url(${portal/absolute_url}/++theme++theme/images/flower_bg.png);
+        background-repeat: no-repeat;
+    }
+    /* 小尺寸: 480px 以下 */
+    @media (max-width: 480px) {
+        .sidebar-page-container {
+            background-image: none;
+        }
+    }
+    </style>
 </div>
+
 
   <div id="parent-fieldname-text"
       tal:condition="context/text"
