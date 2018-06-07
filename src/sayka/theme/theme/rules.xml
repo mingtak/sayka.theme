@@ -119,7 +119,8 @@
            css:theme=".top-right.pull-right .top-nav li" />
   <replace css:content="#header_user_info" css:theme=".top-right.pull-right" />
   <replace css:content=".portletContent.form-container" css:theme=".form-container" />
-  
+
+  <!-- drop -->
 </rules>
 </rules>
 
