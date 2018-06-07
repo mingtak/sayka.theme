@@ -1,7 +1,9 @@
 /*
 黃: #f5e78f
 紫: #782e87
+首頁妙元大法師 大黃: #f8cd19
 */
+
 .sidebar-page-container {
     background-color: #f5e78f;
 }
@@ -10,4 +12,10 @@
     margin-top: 0;
     padding-top: 40px;
     background-color: #782e87;
+}
+
+.template-cover_view .sidebar-page-container {
+    color: #fff;
+    background-color: #f8cd19;
+    padding: 100px 0;
 }

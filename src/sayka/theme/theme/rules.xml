@@ -121,6 +121,7 @@
   <replace css:content=".portletContent.form-container" css:theme=".form-container" />
 
   <!-- drop -->
+  <drop css:theme=".sidebar-page-container" css:if-content=".template-cover_view"/>
 </rules>
 </rules>
 
