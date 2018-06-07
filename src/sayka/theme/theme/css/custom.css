@@ -1,0 +1,13 @@
+/*
+黃: #f5e78f
+紫: #782e87
+*/
+.sidebar-page-container {
+    background-color: #f5e78f;
+}
+
+.main-footer .footer-bottom .copyright-section {
+    margin-top: 0;
+    padding-top: 40px;
+    background-color: #782e87;
+}
