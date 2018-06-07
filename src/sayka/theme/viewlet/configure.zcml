@@ -13,14 +13,6 @@
         permission="zope2.View"
     />
     <browser:viewlet
-        name="news_scroll"
-        for="*"
-        manager="plone.app.layout.viewlets.interfaces.IGlobalStatusMessage"
-        class=".viewlet.NewsScroll"
-        template="template/news_scroll.pt"
-        permission="zope2.View"
-    />
-    <browser:viewlet
         name="banner"
         for="sayka.content.interfaces.ICover"
         manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
