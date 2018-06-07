@@ -1,3 +1,8 @@
+<?python
+from plone import api
+portal = api.portal.get()
+?>
+
 <div class="sidebar-page-container master-intro">
   <h1 class="text-center" style="font-size:40px">妙元大和尚</h1>
   <div class="text-center"><br>
@@ -9,3 +14,44 @@
     </p>
   </div>
 </div>
+
+<!-- 缺影片 / 苗栗觀光聖地​釋迦山空拍 -->
+<div class="sidebar-page-container bg_1">
+    <img src="${python:portal['cover'].absolute_url()}/@@images/bg_1">
+</div>
+
+
+<div class="sidebar-page-container rebuild">
+  <h1 class="text-center" style="font-size:40px">重建釋迦山</h1>
+  <div class="text-center"><br>
+    <p style="font-size:22px">修行路上行孝道，扶老攜幼向前行<br>
+        釋迦山上鐘聲起，菩薩福慧照光明<br>
+        重建釋迦山<br>
+        福澤廣倍<br>
+        南無阿彌陀佛
+    </p>
+  </div>
+</div>
+
+
+<!-- 未連結 / 浴火重建專區 -->
+<div class="sidebar-page-container bg_2">
+    <img src="${python:portal['cover'].absolute_url()}/@@images/bg_2">
+    <div class="text text-center">
+        <h2>浴火重建專區</h2>
+        <hr>
+        <a href="">VIEW ALL</a>
+    </div>
+</div>
+
+<!-- 釋迦山功德會 -->
+<div class="sidebar-page-container org">
+  <h1 class="text-center" style="font-size:40px">釋迦山功德會</h1>
+  <div class="text-center"><br>
+    <p style="font-size:22px">大家濟助社會急須<br>
+        凡參加我們大家的-釋迦功德會<br>
+        成員者定期做功德迴向
+    </p>
+  </div>
+</div>
+

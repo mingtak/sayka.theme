@@ -2,6 +2,8 @@
 黃: #f5e78f
 紫: #782e87
 首頁妙元大法師 大黃: #f8cd19
+重建釋迦山 紫: #782e87
+釋迦山功德會 紅: #b63d32
 */
 
 .sidebar-page-container {
@@ -14,8 +16,41 @@
     background-color: #782e87;
 }
 
-.template-cover_view .sidebar-page-container {
+.template-cover_view .sidebar-page-container.master-intro,
+.template-cover_view .sidebar-page-container.rebuild,
+.template-cover_view .sidebar-page-container.org {
     color: #fff;
     background-color: #f8cd19;
     padding: 100px 0;
+}
+
+.template-cover_view .sidebar-page-container.rebuild {
+    background-color: #782e87;
+}
+
+.template-cover_view .sidebar-page-container.org {
+    background-color: #b63d32;
+}
+
+.template-cover_view .sidebar-page-container.bg_1, .template-cover_view .sidebar-page-container.bg_2 {
+    padding: 0;
+}
+
+.template-cover_view .sidebar-page-container.bg_2 img {
+    width: 100%;
+    height: auto;
+}
+
+.template-cover_view .sidebar-page-container.bg_2 .text {
+    position: absolute;
+    top: 120px;
+    left: 80px;
+    width: 300px;
+    color: #fff;
+
+}
+
+.template-cover_view .sidebar-page-container.bg_2 .text a {
+    font-size: 22px;
+    color: #fff;
 }
