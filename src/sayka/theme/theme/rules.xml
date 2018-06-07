@@ -46,7 +46,9 @@
       <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">content-side col-lg-8 col-md-8 col-sm-12 col-xs-12</xsl:if>
       <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">content-side col-lg-12 col-md-12 col-sm-12 col-xs-12</xsl:if>
       <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">content-side col-lg-8 col-md-8 col-sm-12 col-xs-12</xsl:if>
-      <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">content-side col-lg-12 col-md-12 col-sm-12 col-xs-12</xsl:if>
+<!-- flower and no flower -->
+      <xsl:if test="(//div[@class='flower']) and not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">content-side col-md-offset-4 col-lg-8 col-md-8 col-sm-12 col-xs-12</xsl:if>
+      <xsl:if test="not (//div[@class='flower']) and not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">content-side col-lg-12 col-md-12 col-sm-12 col-xs-12</xsl:if>
     </xsl:variable>
 
     <div class="{$central}">
