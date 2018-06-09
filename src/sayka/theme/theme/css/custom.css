@@ -36,6 +36,10 @@
     padding: 0;
 }
 
+.template-cover_view .sidebar-page-container.bg_1 img {
+    width: 100%;
+}
+
 .template-cover_view .sidebar-page-container.bg_2 img {
     width: 100%;
     height: auto;
@@ -76,3 +80,6 @@
     color:#782e87;
 }
 
+.header-upper img {
+    width: 100%;
+}
