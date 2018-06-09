@@ -12,6 +12,13 @@
                     tal:define="toc context/table_of_contents|nothing;">
 
 
+<div class="flower-title-img">
+    <img src="${portal_url}/++theme++theme/images/flower.png"> 
+</div>
+<h2 class="flower-h2-title">${context/title}</h2>
+<div class="flower-underline"></div>
+<br>
+
 <div class="flower">
 <?python
 from plone import api

@@ -55,6 +55,24 @@
     color: #fff;
 }
 
-.template-cover_view .footer-slider .f_slider img{
-    /* width: 23%; */
+.flower-underline{
+    left: 95px;
+    width: 576px;
+    position: absolute;
+    top: 50px;
+    height: 5px;
+    border-bottom: 2px solid rgba(120, 45, 135, 1);
+    height: 0 !important;
+    min-height: 0 !important;
 }
+
+.flower-title-img {
+    float: left;
+    margin-right: 15px;
+}
+
+.flower-h2-title {
+    padding-top: 10px;
+    color:#782e87;
+}
+
