@@ -28,7 +28,7 @@
         template="template/news_event.pt"
         permission="zope2.View"
     />
-    <browser:viewlet 
+<!--    <browser:viewlet 
         name="gallery"
         for="sayka.content.interfaces.ICover"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
@@ -36,6 +36,7 @@
         template="template/gallery.pt"
         permission="zope2.View"
     />
+-->
     <browser:viewlet
         name="header_user_info"
         for="*"

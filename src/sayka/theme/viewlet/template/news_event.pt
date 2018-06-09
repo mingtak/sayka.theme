@@ -55,3 +55,34 @@ portal = api.portal.get()
   </div>
 </div>
 
+<!-- footer slider -->
+<style>
+.f_slider { height:500px}
+.f_slider .img-box {
+    width: 25%;
+    float: left;
+object-fit: cover;
+}
+.f_slider .img-box img {
+ height:100%;
+}
+    
+</style>
+<div class="footer-slider">
+    <div class="f_slider">
+        <div class="img-box">
+            <img src="${python:portal['cover'].absolute_url()}/@@images/f_slider_1">
+        </div>
+        <div class="img-box">
+            <img src="${python:portal['cover'].absolute_url()}/@@images/f_slider_2">
+        </div>
+        <div class="img-box">
+            <img src="${python:portal['cover'].absolute_url()}/@@images/f_slider_3">
+        </div>
+        <div class="img-box">
+            <img src="${python:portal['cover'].absolute_url()}/@@images/f_slider_4">
+        </div>
+
+ </div>
+
+</div>
