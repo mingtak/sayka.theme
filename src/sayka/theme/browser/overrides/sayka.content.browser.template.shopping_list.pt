@@ -21,9 +21,9 @@ abs_url = portal.absolute_url()
     padding: 10px;
     margin-bottom: 20px;
     text-align: center;
-    background: #FCE38A;
+    background: #658525;
     transition: 0.5s;
-    color: rgb(102, 102, 102);
+    color: white;
 }
 .go_confirm_cart:hover{
     background: #F08A5D;

@@ -83,3 +83,7 @@
 .header-upper img {
     width: 100%;
 }
+
+.news-block-six .inner-box .image-box .image .overlay-box {
+    top:200px
+}

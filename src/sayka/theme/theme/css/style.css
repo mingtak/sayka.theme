@@ -6759,7 +6759,7 @@ img{
 	transition:all 500ms ease;
 }
 
-.shop-page .product-info-tabs .prod-tabs .tab-btns .tab-btn.active-btn:after{
+/*.shop-page .product-info-tabs .prod-tabs .tab-btns .tab-btn.active-btn:after{
 	position:absolute;
 	content:'';
 	left:0px;
@@ -6768,7 +6768,7 @@ img{
 	height:3px;
 	background-color:#ffffff;
 }
-
+*/
 .shop-page .product-info-tabs .prod-tabs .tab-btns .tab-btn.active-btn{
 	color:#222222;
 	background:#ffffff;

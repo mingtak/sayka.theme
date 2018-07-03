@@ -42,9 +42,9 @@ td{
 .edit_profile{
     padding: 10px;
     text-align: center;
-    background: #FCE38A;
+    background: #658525;
     transition: 0.5s;
-    color: rgb(102, 102, 102);
+    color: white;
 }
 .edit_profile:hover{
     background: #F08A5D;
