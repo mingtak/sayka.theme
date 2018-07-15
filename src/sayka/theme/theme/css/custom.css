@@ -6,6 +6,53 @@
 釋迦山功德會 紅: #b63d32
 */
 
+#content-core ul li {
+    list-style: initial;
+}
+
+#content-core ol li {
+    list-style: decimal;
+}
+
+#content-core img{
+    margin: 12px;
+}
+
+.sidebar-page-container.bg_1 {
+    max-height:400px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.sidebar-page-container.bg_1 img{
+    height:400px;
+}
+
+.sidebar-page-container.bg_1 video{
+    width:100%;
+    position: absolute;
+    top: -100%;
+    bottom: -100%;
+    margin: auto;
+}
+
+.main-menu .navigation > li > a  {
+    padding: 17px 15px;
+}
+
+.template-text_listing #content-core .content-inner .anwser {
+    background:#782e87;
+    color: #fff;
+}
+
+.news-block-four {
+    border-bottom-color: #782e87;
+}
+
+.template-youtube_listing #content-core h3 {
+    color: #aaa;
+}
+
 .sidebar-page-container {
     background-color: #f5e78f;
 }
@@ -34,6 +81,7 @@
 
 .template-cover_view .sidebar-page-container.bg_1, .template-cover_view .sidebar-page-container.bg_2 {
     padding: 0;
+    background-color: #782f87;
 }
 
 .template-cover_view .sidebar-page-container.bg_1 img {

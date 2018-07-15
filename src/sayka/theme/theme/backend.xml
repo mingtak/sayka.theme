@@ -92,9 +92,10 @@
         <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-12</xsl:if>
       </xsl:variable>
       <div class="{$central}">
-        <p class="pull-right visible-xs">
+<!--        <p class="pull-right visible-xs">
           <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
         </p>
+-->
         <div class="row">
           <div class="col-xs-12 col-sm-12">
              <xsl:apply-templates css:select="#content" />
@@ -136,6 +137,8 @@
     <!-- Content header -->
     <drop css:theme="#portal-top" />
     <drop css:theme="#portal-footer-wrapper" />
+
+    <drop css:content="#portal-breadcrumbs" />
 
   </rules>
 

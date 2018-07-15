@@ -1,10 +1,13 @@
 <html xmlns:v-on="http://www.vue.org/v-on"
     xmlns:v-bind="http://www.vue.org/v-bind"
     xmlns:v-model="http://www.vue.org/v-model">
-    <?python
-        from plone import api
-        abs_url = api.portal.get().absolute_url()
-    ?>
+
+<?python
+from plone import api
+abs_url = api.portal.get().absolute_url()
+sliders = [1, 2, 3, 4, 5]
+?>
+
 <section class="main-slider-five">
     <div class="product-details">
         <div class="basic-details">
@@ -13,17 +16,21 @@
                     tal:define="item python:view.catch_banner()[0]">
                   <tal:def define="obj python:item.getObject()">
                     <ul class="image-carousel owl-carousel owl-theme" >
-                        <li>
+<tal:item repeat="slider sliders">
+                        <li tal:condition="python:getattr(context, 'banner%s' % slider, None)">
                             <div class="news-block-six">
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <div class="image">
-                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="${python: obj.absolute_url()}/@@images/banner1"  alt="" />
+                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms"
+                                                 src="${python: obj.absolute_url()}/@@images/${python:'banner%s' % slider}"
+                                                 alt="${python:getattr(context, 'banner%s_title' % slider, None)}" />
                                             <div class="overlay-box">
                                                 <div class="overlay-inner">
                                                     <div class="content">
-                                                        <h2>${python: obj.banner1_title}</h2>
-                                                        <div class="post-date margin" tal:content="structure python: obj.description1.raw"></div>
+                                                        <h2>${python:getattr(obj, 'banner%s_title' % slider, None)}</h2>
+                                                        <div class="post-date margin"
+                                                             tal:content="structure python: getattr(obj, 'description%s' % slider, None).raw"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -32,82 +39,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="news-block-six">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <div class="image">
-                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="${python: obj.absolute_url()}/@@images/banner2"  alt="" />
-                                            <div class="overlay-box">
-                                                <div class="overlay-inner">
-                                                    <div class="content">
-                                                        <h2>${python: obj.banner2_title}</h2>
-                                                        <div class="post-date margin" tal:content="structure python: obj.description2.raw"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="news-block-six">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <div class="image">
-                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="${python: obj.absolute_url()}/@@images/banner3"  alt="" />
-                                            <div class="overlay-box">
-                                                <div class="overlay-inner">
-                                                    <div class="content">
-                                                        <h2>${python: obj.banner3_title}</h2>
-                                                        <div class="post-date margin" tal:content="structure python: obj.description3.raw"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="news-block-six">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <div class="image">
-                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="${python: obj.absolute_url()}/@@images/banner4"  alt="" />
-                                            <div class="overlay-box">
-                                                <div class="overlay-inner">
-                                                    <div class="content">
-                                                        <h2>${python: obj.banner4_title}</h2>
-                                                        <div class="post-date margin" tal:content="structure python: obj.description4.raw"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="news-block-six">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <div class="image">
-                                            <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="${python: obj.absolute_url()}/@@images/banner5"  alt="" />
-                                            <div class="overlay-box">
-                                                <div class="overlay-inner">
-                                                    <div class="content">
-                                                        <h2>${python: obj.banner5_title}</h2>
-                                                        <div class="post-date margin" tal:content="structure python: obj.description5.raw"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+</tal:item>
                     </ul>
 
                     <div class="thumbs-carousel"></div>

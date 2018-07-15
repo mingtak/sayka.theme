@@ -48,7 +48,7 @@ portal = api.portal.get()
                     <div class="inner-box">
                         <div class="row clearfix">
                             <div class="content-box col-md-8 col-sm-8 col-xs-12">
-                                <h3 style='color:#333'>${item/Title}</h3>
+                                <h3>${item/Title}</h3>
                                 <p style="color:#777;font-size:15px">${item/Description}</p>
                                 <div class="content-inner" 
                                     tal:define="youtube python: item.getObject().url"

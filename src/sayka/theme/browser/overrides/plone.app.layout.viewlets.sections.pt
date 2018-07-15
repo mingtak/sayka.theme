@@ -1,10 +1,15 @@
-segmentation<tal:sections
+<tal:sections
      xmlns:tal="http://xml.zope.org/namespaces/tal"
      xmlns:metal="http://xml.zope.org/namespaces/metal"
      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
      tal:define="portal_tabs view/portal_tabs"
      tal:condition="portal_tabs"
      i18n:domain="plone">
+<?python
+from plone import api
+portal = api.portal.get()
+abs_url = portal.absolute_url()
+?>
 
 <nav class="plone-navbar" id="portal-globalnav-wrapper">
   <div class="container">
@@ -12,21 +17,18 @@ segmentation<tal:sections
       <ul class="plone-nav plone-navbar-nav navigation clearfix"
           id="portal-globalnav"
           tal:define="selected_tab python:view.selected_portal_tab">
-          <?python
-          from plone import api
-          abs_url = api.portal.get().absolute_url()
-          ?>
           <li class='dropdown' tal:repeat='item portal_tabs'>
               <a href="${python:item['url']}">
                   ${python:item['name']}
               </a>
               <ul tal:condition='repeat/item/index'>
-                  <li tal:repeat="sec_item python: api.content.find(path='/sayka/' + item['id'] , 
-                      depth=1, portal_type='Folder')">
-                     <a href="${sec_item/getURL}">   
-                       ${python:sec_item.Title}
+                <tal:sub repeat="sec_item python:portal[item['id']].getChildNodes()">
+                  <li tal:condition="python:sec_item.Type() == 'Folder' and not sec_item.exclude_from_nav">
+                     <a href="${sec_item/absolute_url}">   
+                       ${python:sec_item.Title()}
                      </a>
                   </li>
+                </tal:sub>
               </ul>
           </li>
       </ul>
@@ -49,14 +51,15 @@ segmentation<tal:sections
                          <a href="${python:item['url']}">
                                 ${python:item['name']}
                           </a>
-                           <ul tal:condition='repeat/item/index'>
-                                <li tal:repeat="sec_item python: api.content.find(path='/sayka/' + item['id'] ,
-                                    depth=1, portal_type='Folder')">
-                                    <a href="${sec_item/getURL}">
-                                           ${python:sec_item.Title}
+                          <ul tal:condition='repeat/item/index'>
+                             <tal:sub repeat="sec_item python:portal[item['id']].getChildNodes()">
+                                <li tal:condition="python:sec_item.Type() == 'Folder' and not sec_item.exclude_from_nav">
+                                    <a href="${sec_item/absolute_url}">
+                                           ${python:sec_item.Title()}
                                     </a>
                                 </li>
-                            </ul>
+                             </tal:sub>
+                          </ul>
                       </li>
                 </ul>
             </div>

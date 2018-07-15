@@ -17,9 +17,8 @@ portal = api.portal.get()
 
 <!-- 缺影片 / 苗栗觀光聖地​釋迦山空拍 -->
 <div class="sidebar-page-container bg_1">
-    <img src="${python:portal['cover'].absolute_url()}/@@images/bg_1">
+    <img id="imgCode" src="${python:portal['cover'].absolute_url()}/@@images/bg_1">
 </div>
-
 
 <div class="sidebar-page-container rebuild">
   <h1 class="text-center" style="font-size:40px">重建釋迦山</h1>

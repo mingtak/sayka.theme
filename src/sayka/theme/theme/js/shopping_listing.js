@@ -32,7 +32,7 @@ $(function(){
                 }else if(response == 'Item exist'){
                     notify({
                         type: "warning", //alert | success | error | warning | info
-                        title: "商品以再購物車內",
+                        title: "商品已在購物車內",
                         position: {
                             x: "right", //right | left | center
                             y: "bottom" //top | bottom | center
