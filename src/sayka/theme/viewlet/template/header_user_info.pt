@@ -12,6 +12,7 @@ abs_url = portal.absolute_url()
         <tal:cond condition="not: view/anonymouse">
             <li style='font-size:15px;color:white'>Hi~ ${view/user_id} 
 		<a href="${abs_url}/folder_contents" tal:condition="view/isManager" style='color:aqua'>(後台管理)</a>
+        <a href="${abs_url}/logout">/登出</a>
 	    </li>
         </tal:cond>
     </ul>

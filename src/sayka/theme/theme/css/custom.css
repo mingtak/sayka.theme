@@ -6,6 +6,21 @@
 釋迦山功德會 紅: #b63d32
 */
 
+
+.auto-container {
+    padding-left: 100px;
+}
+
+.template-login_form #content-core .field input {
+    margin-left:10px;
+    margin-bottom:10px;
+}
+
+.template-login_form #content-core .formControls .context {
+    box-shadow: 3px 3px 2px #ccc;
+    width: 80px;
+}
+
 #content-core ul li {
     list-style: initial;
 }

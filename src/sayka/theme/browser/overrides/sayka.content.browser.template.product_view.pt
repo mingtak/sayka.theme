@@ -15,6 +15,7 @@
 from plone import api
 portal = api.portal.get()
 abs_url = api.portal.get().absolute_url()
+images = ['image_1', 'image_2', 'image_3', 'image_4', 'image_5', 'image_6', 'image_7', 'image_8', ]
 ?>
 
 <div class="shop-page">
@@ -25,27 +26,24 @@ abs_url = api.portal.get().absolute_url()
             
                 <div class="image-column col-md-6 col-sm-12 col-xs-12">
                     <div class="carousel-outer">
-                        <ul class="image-carousel owl-carousel owl-theme">
-                            <li><a href="${context/absolute_url}/@@images/image_1" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_1" alt=""></a></li>
-                            <li><a href="${context/absolute_url}/@@images/image_2" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_2" alt=""></a></li>
-                            <li><a href="${context/absolute_url}/@@images/image_3" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_3" alt=""></a></li>
-                            <li><a href="${context/absolute_url}/@@images/image_4" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_4" alt=""></a></li>
-                            <li><a href="${context/absolute_url}/@@images/image_5" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_5" alt=""></a></li>
-                            <li><a href="${context/absolute_url}/@@images/image_6" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_6" alt=""></a></li>
-                            <li><a href="${context/absolute_url}/@@images/image_7" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_7" alt=""></a></li>
-                            <li><a href="${context/absolute_url}/@@images/image_8" class="lightbox-image" title="Image Caption Here"><img src="${context/absolute_url}/@@images/image_8" alt=""></a></li>
-                        </ul>
+                        <div class="image-carousel owl-carousel owl-theme">
+                          <tal:item repeat="image images">
+                            <tal:li tal:condition="python:getattr(context, image)">
+                                <a href="javascript:void(0)"
+                                   class="lightbox-image" title="Image Caption Here">
+                                   <img src="${context/absolute_url}/@@images/${image}/large" alt="">
+                                </a>
+                            </tal:li>
+                          </tal:item>
+                        </div>
                         
-                        <ul class="thumbs-carousel owl-carousel owl-theme">
-                            <li><img src="${context/absolute_url}/@@images/image_1" alt=""></li>
-                            <li><img src="${context/absolute_url}/@@images/image_2" alt=""></li>
-                            <li><img src="${context/absolute_url}/@@images/image_3" alt=""></li>
-                            <li><img src="${context/absolute_url}/@@images/image_4" alt=""></li>
-                            <li><img src="${context/absolute_url}/@@images/image_5" alt=""></li>
-                            <li><img src="${context/absolute_url}/@@images/image_6" alt=""></li>
-                            <li><img src="${context/absolute_url}/@@images/image_7" alt=""></li>
-                            <li><img src="${context/absolute_url}/@@images/image_8" alt=""></li>
-                        </ul>
+                        <div class="thumbs-carousel owl-carousel owl-theme">
+                          <tal:item repeat="image images">
+                            <tal:li tal:condition="python:getattr(context, image)">
+                              <img src="${context/absolute_url}/@@images/${image}/large" alt="">
+                            </tal:li>
+                          </tal:item>
+                        </div>
                         
                     </div>
                 </div>
@@ -83,26 +81,17 @@ abs_url = api.portal.get().absolute_url()
                 <!--Tab Btns-->
                 <ul class="tab-btns tab-buttons clearfix">
                     <li data-tab="#prod-details" class="tab-btn active-btn">產品詳細介紹</li>
-                    <li data-tab="#prod-reviews" class="tab-btn">退換貨須知</li>
                 </ul>
                 
                 <!--Tabs Container-->
                 <div class="tabs-content">
                     
                     <!--Tab / Active Tab-->
-                    <div class="tab active-tab" id="prod-details">
+                    <div class="tab active-tab" id="prod-details" style='padding: 10px 5px'>
                         <div class="content">
-                            <p>${context/detail}</p>
+                            <p tal:content="structure python: context.detail.replace('\n', '<br>')"></p>
                         </div>
                     </div>
-                    
-                    <!--Tab-->
-                    <div class="tab" id="prod-reviews">
-                        <div class="content">
-                            <p>退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知退換貨須知</p>
-                        </div>
-                    </div>
-    
                     
                 </div>
             </div>

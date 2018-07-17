@@ -46,8 +46,8 @@
 		
 		//Disable dropdown parent link
 		$('.main-header .navigation li.dropdown > a,.hidden-bar .side-menu li.dropdown > a').on('click', function(e) {
-			if( this.text.trim() != '首頁' && this.text.trim() != '結緣區' 
-                            && this.text.trim() != '訂單資訊' && this.text.trim() != '订单资讯' 
+			if( this.text.trim() != '首頁' && this.text.trim() != '結緣區' && this.text.trim() != '會刊文章'
+                && this.text.trim() != '会刊文章' && this.text.trim() != '浴火重建' && this.text.trim() != '浴火重建' 
                             &&this.text.trim() != '结缘区' && this.text.trim() != '首页'){
 				e.preventDefault();
 			}
@@ -63,8 +63,8 @@
 		// toggling child ul
 		menuWrap.find('li.dropdown > a').each(function () {
 			$(this).on('click', function (e) {
-                        if( this.text.trim() != '首頁' && this.text.trim() != '結緣區' 
-                            && this.text.trim() != '訂單資訊' && this.text.trim() != '订单资讯' 
+                        if( this.text.trim() != '首頁' && this.text.trim() != '結緣區'  && this.text.trim() != '浴火重建'
+                            && this.text.trim() != '会刊文章' && this.text.trim() != '會刊文章' && this.text.trim() != '浴火重建'
                             &&this.text.trim() != '结缘区' && this.text.trim() != '首页'){
                                  e.preventDefault();
                             

@@ -24,12 +24,33 @@
       tal:define="portal context/@@plone_portal_state/portal;
                   image_scale portal/@@image_scale">
 
+<div class="flower">
+<?python
+from plone import api
+portal = api.portal.get()
+?>
+    <style>
+    .sidebar-page-container {
+        background-image: url(${portal/absolute_url}/++theme++theme/images/flower_bg.png);
+        background-repeat: no-repeat;
+    }
+    /* 小尺寸: 480px 以下 */
+    @media (max-width: 480px) {
+        .sidebar-page-container {
+            background-image: none;
+        }
+    }
+    </style>
+</div>
+
+
+
 <div class="container">
   <tal:images tal:repeat="image images">
 
 <div class="row" tal:omit-tag="python:repeat['image'].number % 4 != 0">
 
-<div class="col-md-3 col-xs-6">
+<div class="col-md-2 col-xs-6">
     <div class="photoAlbumEntry" style="text-align:center">
       <a tal:attributes="href string:${image/getURL}/@@images/image/large.png;
                          title image/Description"
