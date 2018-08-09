@@ -139,7 +139,8 @@
     <drop css:theme="#portal-footer-wrapper" />
 
     <drop css:content="#portal-breadcrumbs" />
-
+    <drop css:content="#item-cart" />
+    <drop css:content="#contentview-view, #plone-contentmenu-display, #plone-contentmenu-portletmanager, #contentview-syndication, #contentview-edit, #plone-contentmenu-workflow, #plone-contentmenu-actions"/>
   </rules>
 
 </rules>

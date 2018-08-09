@@ -113,8 +113,8 @@
   <replace css:content="#path_bar" css:theme-children=".page-title .pull-right" />
   <replace css:content="#global_statusmessage .top-left" 
            css:theme=".main-header .header-top .auto-container .top-left" />
-  <replace css:content="#global_statusmessage .pull-right" 
-           css:theme=".dropdown-menu.pull-right.cart-panel" />
+  <replace css:content=".cart-box" 
+           css:theme=".cart-box" />
   <replace css:content="#portal-anontools ul li" 
            css:theme=".top-right.pull-right .top-nav li" />
   <replace css:content="#header_user_info" css:theme=".top-right.pull-right" />

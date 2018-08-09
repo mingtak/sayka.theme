@@ -5,8 +5,17 @@
         from plone import api
         abs_url = api.portal.get().absolute_url()
     ?>
-    <div class="dropdown-menu pull-right cart-panel" aria-labelledby="dropdownMenu3"
-         id="item-cart">
+<div class="cart-box" id='item-cart'>
+  <div class="dropdown">
+    <button class="cart-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" 
+            aria-haspopup="true" aria-expanded="false">
+        <span class="cart_number" style="position: absolute;right: -10px;height: 20px;width: 20px;font-weight: bolder;top: -8px;
+                                         line-height: 20px;background: red;border-radius: 100%;z-index: 1;font-size: 12px;color: white;
+                                         " v-if="number > 0">{{number}}</span>    
+        <span class="fa fa-shopping-cart"></span>
+    </button>
+
+    <div class="dropdown-menu pull-right cart-panel" aria-labelledby="dropdownMenu3">
         <div is="product-list"
             v-model="product_list"
             v-for="(product,index) in product_list"
@@ -24,4 +33,7 @@
             <li><a href="${abs_url}/@@confirm_cart" id='go_confirm_cart'>結帳</a></li>
         </ul>
     </div>
+  </div>
+</div>
+
 </html>

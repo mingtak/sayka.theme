@@ -94,10 +94,6 @@ input[type="checkbox"] + label span {
     height: 150px;
 }
 </style>
-        <div  id='csv_notic'>
-            <h3 style='text-align:center;'>*付款完成請記得點選<span style='color:#B83B5E'>返回商店</span>按鈕</h3>
-            <img src="/++theme++theme/images/billing_csv.png" />
-        </div>
 <form action="check_profile" method="post">
     <!-- 訂購人 -->
     <div style="font-size: 18px;font-weight: bold;">訂購人</div>

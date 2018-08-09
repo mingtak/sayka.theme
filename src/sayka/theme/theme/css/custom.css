@@ -6,10 +6,12 @@
 釋迦山功德會 紅: #b63d32
 */
 
-
-.auto-container {
-    padding-left: 100px;
+/* @media only screen and (max-width: 767px) */
+.main-header .nav-toggler {
+    background: #782e87;
 }
+
+
 
 .template-login_form #content-core .field input {
     margin-left:10px;

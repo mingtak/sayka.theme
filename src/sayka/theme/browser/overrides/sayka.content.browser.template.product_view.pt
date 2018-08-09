@@ -23,7 +23,6 @@ images = ['image_1', 'image_2', 'image_3', 'image_4', 'image_5', 'image_6', 'ima
         <!--Basic Details-->
         <div class="basic-details">
             <div class="row clearfix">
-            
                 <div class="image-column col-md-6 col-sm-12 col-xs-12">
                     <div class="carousel-outer">
                         <div class="image-carousel owl-carousel owl-theme">
@@ -36,8 +35,7 @@ images = ['image_1', 'image_2', 'image_3', 'image_4', 'image_5', 'image_6', 'ima
                             </tal:li>
                           </tal:item>
                         </div>
-                        
-                        <div class="thumbs-carousel owl-carousel owl-theme">
+                        <div class="thumbs-carousel owl-carousel owl-theme" >
                           <tal:item repeat="image images">
                             <tal:li tal:condition="python:getattr(context, image)">
                               <img src="${context/absolute_url}/@@images/${image}/large" alt="">
@@ -89,7 +87,8 @@ images = ['image_1', 'image_2', 'image_3', 'image_4', 'image_5', 'image_6', 'ima
                     <!--Tab / Active Tab-->
                     <div class="tab active-tab" id="prod-details" style='padding: 10px 5px'>
                         <div class="content">
-                            <p tal:content="structure python: context.detail.replace('\n', '<br>')"></p>
+                            <p tal:condition="context/detail"
+                               tal:content="structure python: context.detail.replace('\n', '<br>')"></p>
                         </div>
                     </div>
                     
@@ -112,7 +111,7 @@ images = ['image_1', 'image_2', 'image_3', 'image_4', 'image_5', 'image_6', 'ima
                         <div class="inner-box">
                             <div class="image-box">
                                 <a href="${result/getURL}">
-                                    <img src="${result/getURL}/@@images/cover" alt="" />
+                                    <img src="${result/getURL}/@@images/cover/large" alt="" />
                                 </a>
                             </div>
                             <?python
@@ -144,6 +143,13 @@ images = ['image_1', 'image_2', 'image_3', 'image_4', 'image_5', 'image_6', 'ima
 </metal:content-core>
 <metal:js fill-slot="js-bottom-slot">
     <script src="${portal_url}/++theme++theme/js/shopping_listing.js"></script>
+    <script>
+        $(function(){
+            if(${view/count} == 1){
+                $('.thumbs-carousel').remove()
+            }
+        })
+    </script>
 </metal:js>
 
 </body>

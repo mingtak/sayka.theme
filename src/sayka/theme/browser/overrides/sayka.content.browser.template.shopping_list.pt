@@ -42,7 +42,7 @@ abs_url = portal.absolute_url()
         <div class="shop-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="inner-box">
                 <div class="image-box">
-                    <a href="${content/absolute_url}"><img src="${content/absolute_url}/@@images/cover" alt="" /></a>
+                    <a href="${content/absolute_url}"><img src="${content/absolute_url}/@@images/cover/preview" alt="" /></a>
                 </div>
                 <div class="lower-box">
                     <div class="upper-box">
