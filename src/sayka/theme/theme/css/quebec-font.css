@@ -27,9 +27,9 @@
 .qb-home:before {
   content: "\e900";
 }
-.qb-menu1:before {
+/*.qb-menu1:before {
   content: "\e901";
-}
+}*/
 .qb-menu2:before {
   content: "\e902";
 }

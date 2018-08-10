@@ -17,7 +17,32 @@ abs_url = portal.absolute_url()
       <ul class="plone-nav plone-navbar-nav navigation clearfix"
           id="portal-globalnav"
           tal:define="selected_tab python:view.selected_portal_tab">
-          <li class='dropdown' tal:repeat='item portal_tabs'>
+<style>
+.header-lower{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f5f6+0,c7cec6+37,c8d7dc+100 */
+background: rgb(242,245,246); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(242,245,246,1) 0%, rgba(213,205,205,0.58) 37%, rgba(237,238,0,0.72) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(242,245,246,1) 0%,rgba(213,205,205,0.58) 37%,rgba(237,238,0,0.72) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(242,245,246,1) 0%,rgb(213,205,205,0.58) 37%,rgba(237,238,238,0.72) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
+}
+.selected a{
+    color: #793d87 !important;
+}
+.main-menu .navigation > li{
+    border-right: none;
+    border-left: none;
+}
+.main-menu .navigation > li > a{
+    color: #000000b3;
+}
+.main-menu .navigation > li:last-child{
+    border: none;
+}
+</style>
+        <tal:repeat repeat='item portal_tabs'>
+          <li tal:define="tid item/id"
+              tal:attributes="class python:selected_tab==tid and 'selected dropdown' or 'dropdown'">
               <a href="${python:item['url']}">
                   ${python:item['name']}
               </a>
@@ -31,6 +56,9 @@ abs_url = portal.absolute_url()
                 </tal:sub>
               </ul>
           </li>
+
+          <li style='font-size: 20px;color: #793d87;padding: 17px 0'>|</li>
+        </tal:repeat>
       </ul>
     </div>
   </div>
@@ -47,9 +75,10 @@ abs_url = portal.absolute_url()
             <div class="side-menu">
                 <!--navigation-->
                  <ul class="navigation clearfix" tal:define="selected_tab python:view.selected_portal_tab">
-                     <li class='dropdown' tal:repeat='item portal_tabs'>
+                   <tal:repeat repeat="item portal_tabs">
+                     <li class='dropdown'>
                          <a href="${python:item['url']}">
-                                ${python:item['name']}
+                               ${python:item['name']}
                           </a>
                           <ul tal:condition='repeat/item/index'>
                              <tal:sub repeat="sec_item python:portal[item['id']].getChildNodes()">
@@ -61,6 +90,7 @@ abs_url = portal.absolute_url()
                              </tal:sub>
                           </ul>
                       </li>
+                  </tal:repeat>
                 </ul>
             </div>
             <div class="options-box">

@@ -1,72 +1,76 @@
 <?python
 from plone import api
 portal = api.portal.get()
+abs_url = portal.absolute_url()
 ?>
+<style>
+.news_container{
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+}
+.news_bg{
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+.news_bg:after{
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -2;
+    background-color: #ffffffa6;
+    filter: blur(5px);
+    border-radius: 20px;
+}
+.news_bg:before{
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    background: url('++theme++theme/images/update_0809/news_bg.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 221px;
+    background-position-y: bottom;
+}
+.more_btn{
+    float: right;
+    margin-right: 10px;
+    background: #793d87;
+    padding: 2px 9px;
+    color: white;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+</style>
+<div style='background: #fff46e'>
+  <div class='container' style='padding: 40px 15px'>
+    <div class='row'>
+      <div class='col-md-12' style='margin-bottom: 20px'>
+        <img src="++theme++theme/images/update_0809/news_banner.png" style='width: 160px'>
+      </div>
 
-<div class="sidebar-page-container master-intro">
-  <h1 class="text-center" style="font-size:40px">妙元大和尚</h1>
-  <div class="text-center"><br>
-    <p style="font-size:22px">剃度及領受三壇大戒<br>
-       得戒體殊勝一剎那<br>
-       感動淚泣<br>
-       即發大願力<br>
-      「無時不以弘揚佛法 續佛慧命」
-    </p>
-  </div>
-</div>
-
-<!-- 缺影片 / 苗栗觀光聖地​釋迦山空拍 -->
-<div class="sidebar-page-container bg_1">
-    <img id="imgCode" src="${python:portal['cover'].absolute_url()}/@@images/bg_1">
-</div>
-
-<div class="sidebar-page-container rebuild">
-  <h1 class="text-center" style="font-size:40px">重建釋迦山</h1>
-  <div class="text-center"><br>
-    <p style="font-size:22px">修行路上行孝道，扶老攜幼向前行<br>
-        釋迦山上鐘聲起，菩薩福慧照光明<br>
-        重建釋迦山<br>
-        福澤廣倍<br>
-        南無阿彌陀佛
-    </p>
-  </div>
-</div>
-
-
-<!-- 未連結 / 浴火重建專區 -->
-<div class="sidebar-page-container bg_2">
-    <img src="${python:portal['cover'].absolute_url()}/@@images/bg_2">
-    <div class="text text-center">
-        <h2>浴火重建專區</h2>
-        <hr>
-        <a href="">VIEW ALL</a>
+      <div tal:repeat="news view/catch_news" class='col-md-6 col-xs-12 news_container'>
+        <div class='news_bg'></div>
+        <a href="${python: abs_url + '/event_info/event_news/'}">
+          <img src="${python: news[2]}/@@images/cover/mini" class='col-md-6 col-xs-12' style='padding: 0 5px'>
+        </a>
+        <div class='col-md-6 col-xs-12' style='padding: 0 5px'>
+          <p style='font-size: 18px;font-weight: bold;'>
+             ${python: news[1][:180]}...    <a href="${python: abs_url + '/event_info/event_news/'}" class='more_btn'>more</a>
+          </p>
+        </div>
+      </div>
     </div>
-</div>
-
-<!-- 釋迦山功德會 -->
-<div class="sidebar-page-container org">
-  <h1 class="text-center" style="font-size:40px">釋迦山功德會</h1>
-  <div class="text-center"><br>
-    <p style="font-size:22px">大家濟助社會急須<br>
-        凡參加我們大家的-釋迦功德會<br>
-        成員者定期做功德迴向
-    </p>
   </div>
-</div>
-
-<div class="footer-slider">
-    <div class="f_slider  owl-carousel owl-theme">
-<div class="item">
-            <img class="img img1" src="${python:portal['cover'].absolute_url()}/@@images/f_slider_1">
-</div>
-<div class="item">
-            <img class="img img2" src="${python:portal['cover'].absolute_url()}/@@images/f_slider_2">
-</div>
-<div class="item">
-            <img class="img img3" src="${python:portal['cover'].absolute_url()}/@@images/f_slider_3">
-</div>
-<div class="item">
-            <img class="img img4" src="${python:portal['cover'].absolute_url()}/@@images/f_slider_4">
-</div>
-    </div>
 </div>

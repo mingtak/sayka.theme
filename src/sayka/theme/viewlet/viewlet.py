@@ -55,14 +55,14 @@ class Banner(base.ViewletBase):
 class NewsEvent(base.ViewletBase):
     def catch_news(self):
         portal = api.portal.get()
-        result_event = api.content.find(context=portal['event_info']['event_news'], sort_limit=5)
+        result_event = api.content.find(context=portal['event_info']['event_news'], sort_limit=4, sort_on='getObjPositionInParent', depth=1)
         event_list = []
         for item in result_event:
-	    if api.content.get_state(obj=item.getObject()) == 'published':
+            if api.content.get_state(obj=item.getObject()) == 'published':
                 title = item.Title
-                date = item.getObject().creation_date.utcdatetime().strftime('%Y-%m-%d')
+                desc = item.Description
                 url = item.getObject().absolute_url()
-                event_list.append([title, date, url])
+                event_list.append([title, desc, url])
         return event_list
 
 
