@@ -29,15 +29,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 .selected a{
     color: #793d87 !important;
 }
+.selected ul a{
+    color: #e0e0e0 !important;
+}
+
 .main-menu .navigation > li{
     border-right: none;
     border-left: none;
 }
 .main-menu .navigation > li > a{
     color: #000000b3;
+    padding: 5px 10px;
 }
 .main-menu .navigation > li:last-child{
     border: none;
+}
+.main-header .outer-box .cart-box{
+    margin-top: 8px;
+}
+.main-header .header-lower .search-box-outer{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 10px; 
+}
+#portal-globalnav .gap{
+    padding: 13px 0;
+}
+#bs-example-navbar-collapse-1 .gap{
+    padding: 4px 0 ;
 }
 </style>
         <tal:repeat repeat='item portal_tabs'>
@@ -57,7 +76,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
               </ul>
           </li>
 
-          <li style='font-size: 20px;color: #793d87;padding: 17px 0'>|</li>
+          <li style='font-size: 20px;color: #793d87' class='gap'>|</li>
         </tal:repeat>
       </ul>
     </div>

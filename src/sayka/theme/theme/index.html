@@ -93,7 +93,7 @@
     	<!--Header-Upper-->
 
         <div class="header-upper">
-            <img src="images/update_0809/biglogo.png"/>
+            <img src="/cover/@@images/header_1"/>
         </div>
         <!--End Header Upper-->
 
@@ -1119,28 +1119,103 @@
         <div class="footer-bottom">
 <style>
 .main-footer .footer-bottom .copyright-section{
-    background: -moz-linear-gradient(top, rgba(223,161,222,1) 0%, rgba(223,161,222,0.73) 56%, rgba(208,146,205,0.52) 99%, rgba(208,146,205,0.52) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(223,161,222,1) 0%,rgba(223,161,222,0.73) 56%,rgba(208,146,205,0.52) 99%,rgba(208,146,205,0.52) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(223,161,222,1) 0%,rgba(223,161,222,0.73) 56%,rgba(208,146,205,0.52) 99%,rgba(208,146,205,0.52) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfa1de', endColorstr='#85d092cd',GradientType=0 ); /* IE6-9 */
+    background: url('++theme++theme/images/footer_browser.png') no-repeat;
+    background-size: cover;
+}
+.footer_phone{
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+.footer_phone a {
+    color: white;
+}
+.copyright-section{
+    height: 170px;
+}
+.rwd_footer{
+    display: none;
+}
+.fix1 span{
+    padding-left: 17px;
+}
+@media only screen and (max-width: 990px) {
+    .main-footer .footer-bottom .copyright-section{
+        background: url('++theme++theme/images/footer_phone.png') no-repeat;
+        background-size: cover;
+        padding-top: 10px;
+    }
+    .copyright_content{
+        background: black;
+        clear: both;
+        display: none;
+    }
+    .copyright-section{
+        height: 190px;
+    }
+    .rwd_footer{
+        display: block;
+        background: black;
+        text-align: center;
+        color: white;
+        clear: both;
+    }
+    .fix1{
+        padding-right: 7px;
+    }
+    .fix1 span{
+        margin-left: 17px;
+        padding: 0;
+    }
+    .fix2{
+        padding-right: 5px;
+    }
+    .fix3{
+        padding-left: 10px;
+    }
+    .fix4{
+        padding-right: 6px;
+    }
+    .fix5{
+        padding-left: 3px;
+    }
 }
 </style>
             <!--Copyright Section-->
-            <div class="copyright-section" style='height: 190px'>
+            <div class="copyright-section">
                 <div class="auto-container">
                     <div class="row clearfix" style='position: relative'>
-                        <img src="images/update_0809/footer_img.png" style='position: absolute;right: 0;top: -39px;'>
-						<div class="col-md-5 col-sm-12 col-xs-12">
+                        <!--<img src="images/update_0809/footer_img.png" style='position: absolute;right: 0;top: -39px;'>-->
+						<div class="col-md-3 col-sm-12 col-xs-12">
                     	  <div align="center">
                           	<a href="index.html"><img src="images/mobile-logo.png" alt="" /></a>
                           </div>
                         </div>
-                        <div class="col-md-7 col-sm-12 col-xs-12">
-                            <div class="copyright">釋迦山 SAKYA Global Website<br>聯絡電話：(02)2259-3691｜地址：363 苗栗縣公館鄉北河村北河5鄰58-2號<br>Copyright © 2018  by SAKYA Global Website </div>
+
+                        <div class="col-md-5 col-sm-12 col-xs-12 footer_phone">
+                          <ul>
+                            <li class="fix1">釋 迦 山<span></span>：037-221333</li>
+                            <li class="fix2">專 用 手 機：<a>0970739888</a></li>
+                            <li class="fix5">板 橋 講 堂：02-22593695</li>
+                          </ul>
+                          <ul>
+                            <li class="fix3">台 中 講 堂：04-22975588</li>
+                            <li>嘉 義 講 堂：05-2309981</li>
+                            <li class="fix4">高 雄 講 堂：07-5591011</li>
+                          </ui>
+                        </div>
+                       <div class="col-md-4 copyright_content">
+                            <div class="copyright">釋迦山 SAKYA Global Website<br>地址：363 苗栗縣公館鄉北河村北河5鄰58-2號
+                                    <br>Copyright © 2018  by SAKYA Global Website </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-sm-12 col-xs-12 rwd_footer">
+            <div class="copyright">釋迦山 SAKYA Global Website<br>地址：363 苗栗縣公館鄉北河村北河5鄰58-2號
+             <br>Copyright © 2018  by SAKYA Global Website
+            </div>
         </div>
     </footer>
     <!--End Main Footer-->

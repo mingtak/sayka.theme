@@ -12,14 +12,24 @@ abs_url = api.portal.get().absolute_url()
         <div class="basic-details">
             <div class="image-column">
                 <div class="carousel-outer" style='position: relative'>
-                    <img src="++theme++theme/images/update_0809/banner.png" style='width: 100%'>
+                    <img src="${abs_url}/cover/@@images/header_2" style='width: 100%'>
                     <a href="${abs_url}/shopping_listing/63506b3e5c085340" style='position: absolute;right: 10px;top: 15px'>
-                      <img src="++theme++theme/images/update_0809/donate.gif" style='max-width: 120px'>
+                      <img class="donate" src="++theme++theme/images/update_0809/donate.gif">
                     </a>
                 </div>
             </div>
         </div>
     </div>
+
+<style>
+.donate {max-width: 120px}
+
+@media (max-width: 640px)
+{
+    .donate {max-width: 60px}
+}
+</style>
+
 </section>
 
 </html>
